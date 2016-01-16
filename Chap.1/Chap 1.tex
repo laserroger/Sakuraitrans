@@ -20,6 +20,7 @@
 \usepackage{tikz}
 \usepackage{mathrsfs}
 \usepackage{bm}
+\newtheorem{theo}{定理}[section]
 
 \makeatletter % `@' now normal 'letter'
 \@addtoreset{equation}{subsection}
@@ -35,8 +36,8 @@
 \renewcommand\thefigure{\oldstylenums{\thesection}%
 .\oldstylenums{\arabic{figure}}}
 \renewcommand\thefootnote{\oldstylenums{\arabic{footnote}}}
-\newcommand{\be}{\begin{align}}
-\newcommand{\ee}{\end{align}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
 \DeclareMathOperator{\res}{Res}
 
 \begin{document}
@@ -536,8 +537,7 @@ XY|\alpha\rangle = X(Y|\alpha\rangle)\overset{\text{DC}}{\longleftrightarrow}(\l
 \begin{align}\label{1.2.32}
 (|\beta\rangle\langle\alpha|)\cdot|\gamma\rangle
 \end{align}
-
-\noindent 因为结合律公理，我们可以把它等价的写成
+因为结合律公理，我们可以把它等价的写成
 
 \begin{align}\label{1.2.33}
 |\beta\rangle\cdot(\langle\alpha|\gamma\rangle)
@@ -548,10 +548,56 @@ XY|\alpha\rangle = X(Y|\alpha\rangle)\overset{\text{DC}}{\longleftrightarrow}(\l
 X=|\beta\rangle\langle\alpha|
 \ee
 那么，
+\be
+X^\dagger = |\alpha\rangle\langle\beta|
+\ee
+其证明留做练习。
+
+另一个有关结合律公理的重要的示例是
+\be\label{1.2.36}
+(\underset{\text{左矢}}{\langle\beta|})\cdot(\underset{\text{右矢}}{X|\alpha\rangle}) = (\underset{\text{左矢}}{\langle\beta|X})\cdot(\underset{\text{右矢}}{|\alpha\rangle})
+\ee
+因为这两边是相等的，我们就可以进而使用一个更简介的符号
+\be
+\langle|X|\alpha\rangle
+\ee
+来表示\eqref{1.2.36}的两边。我们之前讲过左矢$\langle\alpha|X^\dagger$和右矢$X|\alpha\rangle$是对偶的，于是我们可以写
+\be
+\begin{split}
+\langle\beta|X|\alpha\rangle& = \langle\beta|\cdot(X|\alpha\rangle)\\
+&=\{(\langle|X^\dagger)\cdot|\beta\rangle\}^*\\
+&=\langle\alpha|X^\dagger|\beta\rangle^*
+\end{split}
+\ee
+其中，除了结合律公理之外，我们用了内积的基本性质\eqref{1.2.12}。对于一个{\it Hermitian}的算符$X$，我们有
+\be
+\langle\beta|X|\alpha\rangle = \langle\alpha|X|\beta\rangle^*
+\ee
 
 
 
 \subsection{基矢和算符的矩阵表示}
+
+\noindent {\bf{可观测量的本征态}}
+
+\noindent 让我们考虑Hermitian算符$A$的本征态和本征值。我们用$A$这个记号来表示我们之前的可观测量，因为在量子力学里面，Hermitian算符通常来说会代表物理中的可观测量。
+
+我们首先陈述一个定理
+
+\begin{theo}
+Hermitian算符$A$的本征值是实的；它的对应不同本征值的本征态彼此正交。
+\end{theo}
+
+\noindent {\emph{证明}}. 首先，我们记得
+\be
+A|a'\rangle = a'|a'\rangle
+\ee
+因为$A$是Hermitian的，我们同样有
+\be
+\langle a''|A = a''^*\langle a''|
+\ee
+
+
 \subsection{测量，可观测量和不确定关系}
 \subsection{变换基矢的情况}
 \subsection{坐标，动量和平移} \label{s1.6}

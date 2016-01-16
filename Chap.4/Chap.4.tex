@@ -1,3 +1,8 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%times,
+
+
 \documentclass[UTF8,twoside]{ctexart}
 
 \usepackage{amsmath}
@@ -625,7 +630,7 @@ H|n\rangle = E_n|n\rangle
 \noindent 那么，$|n\rangle$仍然是宇称算符的本征态。
 \end{theo}
 
-\noindent {\emph{证明}} 为了证明这个定理，我们首先注意到
+\noindent {\emph{证明}}. 为了证明这个定理，我们首先注意到
 
 \begin{equation} \label{4.2.33}
 \frac{1}{2}(1\pm\pi)|n\rangle
@@ -938,7 +943,7 @@ e^{ik(x’-a)}u_k(x’-a) = e^{ikx’}u_k(x’)e^{-ika}
 \end{centering}
 \end{figure}
 
-至此，我们得到了重要的\bf{Bloch定理}：平移算符$\tau(a)$的本征态，波函数$|\theta\rangle$可以通过平面波#e^{ikx’}$乘上一个周期函数展开。注意到我们在这个过程中只用到了#|\theta\rangle$是平移算符#\tau(a)$本征值为$e^{-i\theta}$的本征态[见\eqref{4.3.7}]。更近一步的说，这条定理在集市紧束缚近似\eqref{4.3.9}不再成立的时候也还是正确的。
+至此，我们得到了重要的{\bf Bloch定理}：平移算符$\tau(a)$的本征态，波函数$|\theta\rangle$可以通过平面波$e^{ikx’}$乘上一个周期函数展开。注意到我们在这个过程中只用到了$|\theta\rangle$是平移算符$\tau(a)$本征值为$e^{-i\theta}$的本征态[见\eqref{4.3.7}]。更近一步的说，这条定理在集市紧束缚近似\eqref{4.3.9}不再成立的时候也还是正确的。
 
 我们现在要去解释我们先前的由\eqref{4.3.13}得到的关于\eqref{4.3.12}$|\theta\rangle$的结果。我们知道波函数可以用波矢为$k$的空间中传播的平面波通过周期函数$u_k(x’)$调制得到[见\eqref{4.3.17}]。在$\theta$从$-\pi$到$\pi$变化的时候，波矢从$-\pi/1$变化到$\pi/a$。能量本征值$E$就有关于$k$的如下关系
 
@@ -946,11 +951,11 @@ e^{ik(x’-a)}u_k(x’-a) = e^{ikx’}u_k(x’)e^{-ika}
 E(k) = E_0-2\Delta\cos ka
 \end{align}
 
-需要注意能量本政治方程只要紧束缚条件成立就与势能的具体形式没有关系。同时也需要注意在$|k|=\pi/a$的地方，Bloch波函数\eqref{4.3.17}有一个截断。方程\eqref{4.3.19}定义了色散曲线，如图\ref{Fig4.9}。由于隧穿，不可数无穷多的简并被彻底地消除了，而得到了一个连续的能带，从$E_0-2\Delta$到$E_0+2\Delta$，被称为\bf{Brillouin区}。
+需要注意能量本政治方程只要紧束缚条件成立就与势能的具体形式没有关系。同时也需要注意在$|k|=\pi/a$的地方，Bloch波函数\eqref{4.3.17}有一个截断。方程\eqref{4.3.19}定义了色散曲线，如图\ref{Fig4.9}。由于隧穿，不可数无穷多的简并被彻底地消除了，而得到了一个连续的能带，从$E_0-2\Delta$到$E_0+2\Delta$，被称为{\bf Brillouin区}。
 
 现在为止我们只考虑了单粒子在周期势中运动的结果。在更贴近现实的情况中，我们必须要考虑非常多的电子在这个势众运动的行为。事实上，电子需要满足Pauli不相容原理（我们将在第\ref{Chap7}章中详细说明），所以将会填充能带。在这样的分析下，金属、半导体等物质的主要定性结论可以通过评议不变性以及不相容原理来进行理解。
 
-读者或许注意到了节\ref{Sec4.2}中对称双势井问题和本节中周期势问题的相似性。对比图\ref{Fig4.3}和图\ref{$.3}，我们注意到它们可以视为势能包含有限个谷的两个不同的极端情况（2 vs 无穷）。
+读者或许注意到了节\ref{Sec4.2}中对称双势井问题和本节中周期势问题的相似性。对比图\ref{Fig4.3}和图\ref{Fig4.9}，我们注意到它们可以视为势能包含有限个谷的两个不同的极端情况（2 vs 无穷）。
 
 \begin{figure}[htbp]
 \begin{centering}
