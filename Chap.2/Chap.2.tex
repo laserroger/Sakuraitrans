@@ -1,0 +1,119 @@
+\documentclass[UTF8,twoside]{ctexart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{bibentry}
+\usepackage{multirow}
+\usepackage[CJKbookmarks=true]{hyperref}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usepackage{bm}
+
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{equation}{subsection}
+\makeatother % `@' is restored as 'non-letter'
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{figure}{section}
+\makeatother % `@' is restored as 'non-letter'
+\renewcommand\theequation{\oldstylenums{\thesubsection}%
+.\oldstylenums{\arabic{equation}}}
+\renewcommand\thefigure{\oldstylenums{\thesection}%
+.\oldstylenums{\arabic{figure}}}
+
+\DeclareMathOperator{\res}{Res}
+
+\begin{document}
+\setcounter{section}{1}
+\title{现代量子力学}
+\author{Laserdog}
+
+\maketitle
+\thispagestyle{empty}
+
+\cleardoublepage
+\pdfbookmark[1]{目录}{anchor}
+\tableofcontents
+\clearpage
+\section{量子动力学}
+\noindent 到目前为止我们还没有讨论物理体系如何随着时间变化。本章将详尽的讲解的动力学演化,换句话说，我们将将量子力学像牛顿（哈密顿或拉格朗日）动力学方程一般进行讨论。
+
+\subsection{时间演化与薛定谔方程}
+
+\noindent \\
+
+\noindent \fbox{%
+  \parbox{\textwidth}{%
+    \begin{centering}
+      {\textbf{本节框架}}\\
+      啦啦啦啦啦啦啦啦啦啦啦
+       \end{centering}
+  }%
+}  \\
+
+\
+
+
+\noindent 首先我们需要知道，时间是量子力学里的一个参数，而不是一个算符。特别的，时间不是先前的章节里讨论的那种可观测量。如果像我们之前讨论坐标算符一样去讨论一个“时间算符”，这是没有意义的。然而具有讽刺意味的是，在波动力学的发展过程中，德布罗意和薛定谔都被引导着考虑把时间和能量的关系与坐标和动量的关系进行类比。但是当我们看量子力学现在的形式，已经没有对时间和空间的对等处理的痕迹了。有关场的相对论性的量子力学的确把坐标和时间同等的处理，但这样做的代价是把坐标从一个客观测量量的地位降到了仅仅是参数的地位。
+
+\ 
+
+
+\noindent {\textbf{时间演化算符}}
+
+
+\noindent 在这一节我们最关心的是，一个体系的态矢量是如何随着时间变化的？假设我们有一个物理体系在$t_0$的时候，态矢量表示为$|a\rangle$。在以后的时间里，我们期望这个体系仍然保持在相同的态$\left|\alpha \right\rangle$。我们用如下表述在接下来的时间里体系右矢一致的情形。
+
+\begin{equation}
+\left|\alpha, t_0; t\right\rangle\quad(t>t_0)
+\end{equation}
+
+\noindent 我们已经写了的$\alpha$,$t_0$提醒我们去注意这个体系$|\alpha\rangle$ 过去曾经是一个。因为时间是一个被假定的连续参数，我们预期
+
+\begin{equation}
+\lim_{t\rightarrow t_0}\left|\alpha, t_0; t\right\rangle=\left|\alpha\right\rangle
+\end{equation}
+
+\noindent 同样我们可以简写为
+
+\begin{equation}
+\left|\alpha, t_0; t_0\right\rangle = \left|\alpha, t_0; t\right\rangle
+\end{equation}
+\noindent 对于这个，我们基本的任务是去研究体系右矢的时间演化：
+\begin{equation}
+\left|\alpha, t_0 \right\rangle =\left| \alpha\right\rangle\xrightarrow{\text{时间演化}}\left|\alpha, t_0; t\right\rangle
+\end{equation}
+\noindent 换句话说，我们感兴趣的是一个体系右矢如何在时间置换下变换$t_0\rightarrow t $。
+\noindent 在这种转换的情况下，两个右矢与一个我们叫做{\textbf{时间演化算符}}$\mathcal{U} (t,t_0)$相关：
+\begin{equation}
+\left|\alpha, t_0; t\right\rangle=\mathcal{U}(t,t_0)\left|\alpha, t_0\right\rangle
+\end{equation}
+\noindent 究竟是有着什么出众的性能我们这么喜欢用时间演化算符呢？首要的性能就是它对于$\mathcal{U}(t,t_0)$遵循同样概率的情形有着统一的要求。假定在$t_0$ 的体系右矢依据某些显著的本征矢$A$拓展：
+\begin{equation}\label{2.1.6}
+\left|\alpha, t_0\right\rangle=\sum_{a'} C_{a'}(t_0)\left|a'\right\rangle
+\end{equation}
+\noindent 同样的，在稍晚的时间，我们有
+\begin{equation}\label{2.1.7}
+\left|\alpha, t_0; t\right\rangle=\sum_{a'} C_{a'}(t)\left|a'\right\rangle
+\end{equation}
+\noindent 一般而言，我们不希望个别的扩张系数保持一致：\footnote{我们在接下来将要阐述，如果$A$与哈密顿函数交换，则balabala与balabala是完全等价的。绝对值不会打。}
+\begin{equation} \label{2.1.8}
+\left|c_{a'}(t)\right| \neq \left|c_{a'}(t_0)\right|
+\end{equation}
+\noindent 例如，考虑一个自旋为$\frac{1}{2}$的体系伴随着它的一个自旋磁矩在一个$z$ 方向的统一磁场中，具体地说，假定在$t_0$时自旋在$x$方向：那就是说，这个体系由本征态$S_x$与本征值$\hbar/2 $所确定。随着时间的推移,自旋转移到$xy$ 平面，balabala。这意味着对于观测$S_x +$ 的可能性不再在$t>t_0$统一了。（这一段完全不会翻译。。求laser 调教。。）这对于观测$S_x +$也是同样有着有限的可能性。然而$S_x +$与$S_x -$的总和的可能性依然在任何时候都是统一的。总而言之，在(\ref{2.1.6})与(\ref{2.1.7})，我们有
+\begin{equation}
+\sum_{a'}|c_{a'}(t_0)|^2 = \sum_{a'}|c_{a'}(t)|^2
+\end{equation}
+\noindent 尽管(\ref{2.1.8})适用于个别的扩大系数（感觉此处的翻译好蠢，求教导）规定的另一种方式，如果体系右矢最初被归一化统一，它必须保持在任何时候都是归一化统一的：
+\begin{equation}
+\langle \alpha, t_0|\alpha, t_0\rangle = 1 \Rightarrow \langle\alpha, t_0;t|\alpha, t_0;t\rangle = 1
+\end{equation}
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,274 @@
+﻿\documentclass[UTF8,twoside]{ctexart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{bibentry}
+\usepackage{multirow}
+\usepackage[CJKbookmarks=true]{hyperref}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usepackage{bm}
+
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{equation}{subsection}
+\makeatother % `@' is restored as 'non-letter'
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{figure}{section}
+\makeatother % `@' is restored as 'non-letter'
+\renewcommand\theequation{\oldstylenums{\thesubsection}%
+.\oldstylenums{\arabic{equation}}}
+\renewcommand\thefigure{\oldstylenums{\thesection}%
+.\oldstylenums{\arabic{figure}}}
+
+\DeclareMathOperator{\res}{Res}
+
+\begin{document}
+\title{现代量子力学}
+\author{Laserdog}
+
+\maketitle
+\thispagestyle{empty}
+
+\cleardoublepage
+\pdfbookmark[1]{目录}{anchor}
+\tableofcontents
+\clearpage
+\section{基本概念}
+\noindent 20世纪最开始的那27年可谓说使我们对于微观现象的认识发生了革命性的变化，这是科学史上前所未有的。我们见证了经典物理面临的严峻考验，从而诞生出了替代的理论，在更大的尺度和更广的范围内成功的代替了经典理论。
+
+我们以前通常的学习量子力学的方式是尊崇它的历史发展规律 - 先从普朗克的黑体辐射定律、爱因斯坦 - 德拜固体热容量、波尔氢原子模型、德布罗意物质波等等一些列的基本理论，伴随着一些重要的实验和对应的细致的分析 - 像康普顿散射、弗兰克-赫兹实验、戴维斯-革末实验\footnote{译者注：原书说的是Davisson-Germer-Thompson 实验。反正指的就是那个用电子衍射证明德布罗意说的有点道理的那个实验。}。这种学习方式可以让我们感受物理学家最开始是如何一点一点被迫放弃掉“完美”的经典力学的概念，然后在几位大师（不要在意他们犯下的一些学术上的错误） —海森堡、薛定谔、狄拉克以及其他所有对量子力学的发展作出贡献的人— 的努力下，最终成功的给出了我们如今看到的学到的量子力学。
+
+然而，我们并不打算遵从这套顺序来学习。相反，我们将从一个特别的实验来入手 - 这个实验，从某种程度上来说，最大程度的从基本的层面展现了经典概念不足。我们希望在最开始给读者一个像“休克疗法”一样巨大的刺激，然后在顺其自然的引导下进入我们所希望看到的的“量子力学的思考方式”。
+
+值得注意的是，这种不同的学习方式不仅仅是一次学术上的尝试。我们的对物理世界的知识都是来自这样一种模式\footnote{译者注：不仅仅是物理，任何自然科学都是这样的。}：我们对于自然做出的猜想，用数学的方式把这些猜想演化成基本假设，再从这些基本假设出发得到一些我们能够做出的“预言”，然后用实验来检验我们做出的预言是否正确。如果不正确，那么我们就知道，我们最开始做出的猜想并不正确。我们这种学习方式强调了最基本的对于自然的猜想，基于我们所有的物理学定律，目标是在最开始就能和量子力学情境下的观测和实验达成一致。
+\clearpage
+\subsection{斯特恩-盖拉赫实验}
+
+\noindent \\
+
+\noindent \fbox{%
+  \parbox{\textwidth}{%
+    \begin{centering}
+      {\textbf{本节框架}}\\
+      本节的内容先进行了一个对我们关注的实验的历史的回顾，然后详尽的描述了这个实验，再利用这个实验和基本的逻辑关系推出如果把多个相同的实验仪器“并联”会发生什么现象，再与一些已有定论的现象（光的偏振）进行类比，合理的引入复数，从而展现一种不一样的量子的世界观。
+    \end{centering}
+  }%
+}  \\
+
+\
+
+\noindent 正如上面所说，我们这一节要关注一个实验 - 斯特恩-盖拉赫实验。这个实验最初由斯特恩在1921年观测到，然后在法兰克福，由盖拉赫的合作下在1922 年完善实施。\footnote{原注：关于这个实验更多的历史和讨论，详见Bretislav Friedrich 和 Dudley Herschbach 写的 "Stern and Gerlach: How a Bad Cigar Helped Atomic Physics"（刊载在"Physics Today"上，2003年53号）。\\ 译者注：至少在写这个注释的时候，译者打算去翻译一下这篇文章扔在附录里面。原文地址：
+\url{http://www.fisica.ufpb.br/~jgallas/CURSOS/Estrutura02/friedrich_herschbach_stern_gerlach_bad_cigar_helped_atomic_phys_PT2003.pdf}}
+这个实验充分的表明了将经典力学的概念无情的抛弃的必要性。在接下来的几节中，我们的量子力学的公式将会展现出一种公理一样的感觉，但是我们都能从这个实验的例子中获得一种心安理得的“合理感”。从某种角度讲，斯特恩-盖拉赫实验所展现的双态系统\footnote{译者注：其实吧这个可以翻译成二能级体系，但是并不准确 - 二能级主要强调的是能级，但是同一能级可能是不同的状态，这与原文 two-state system 并不吻合。} 是与经典体系最不相似而最能体现量子力学的了。对这种双态系统的深刻理解值得任何一位认真学习量子力学的同学去深入研究。因此，纵观整本书，我们都会多次提到这个双态系统。\\
+
+\noindent {\textbf{实验的描述}}
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 8cm]{./Sakurai/Fig_1.1.png}
+\caption{斯特恩-盖拉赫实验}
+\label {Fig1.1}
+\end{centering}
+\end{figure}
+
+\noindent 我们现在展开一个对斯特恩-盖拉赫实验的简短的讨论 - 这几乎在任何一本现代物理的书中都会被提到\footnote{原注：一个基本但是很有启发性的有关这个实验的讨论请看：French, Anthony Philip, and Edwin F. Taylor. An introduction to quantum physics. CRC Press, 1979. 的第432-438页。\\ 译者注：以及，虽然很不齿，但是最直接的观看相关内容的办法是在新浪爱问里面搜索相关内容。 }。首先，我们先把银原子(Ag)在“烤箱”里面进行加热。这个烤箱呢，在壁上有一个洞；这就导致了一些银原子会从这个洞里面跑出去。如图1.1所示，这些原子，经过一个准直仪后会形成“一束”银原子，然后通过一个由一对有着尖锐边缘的磁铁\footnote{译者注：这里面之所以要用这么复杂的句子来说明这个磁铁，是因为这样才会形成明显的不均匀的磁场。详情可以参考类似于尖端放电等事情。}产生的不均匀的磁场。
+
+我们得研究一下这期间磁场对原子的作用。为此，我们接下来将会极度的简化这个模型。银原子由原子核和47个电子构成，其中的46个原子都可以看成是“隐形的”，它们形成球对称分布从而不对角动量或者其他量产生贡献\footnote{译者注：也就是说，他们都不是最外层电子，由于一些更为复杂的效应，他们在我们的模型里面不贡献。为便于理解，你可以把它想象成一个原子核质量很大的氢原子}。如果我们忽略那个与我们问题不相关的核的自选，我们可以发现，整个原子自身确实有一个仅依赖于电子自旋的角动量 -- 它是一个内禀的量，不像轨道角动量那样 -- 由银原子第47个(5s)电子提供的角动量。第47好电子被束缚在相当于它重量$2\times 10^5$倍的核的附近；因此，这个重原子整体表现了一个与47号电子自旋磁矩相同的磁矩。
+
+\begin{equation}
+{\bm{\mu}} \propto S
+\end{equation}
+
+\noindent 其中这个准确的比例系数应该是$e/m_e c$\footnote{原注：在本书中$e$<0}，精确度大概到了$0.2\%$的量级。
+
+因为磁矩和外磁场的相互作用能是$\boldmath{\mu \cdot B}$，原子在$z$方向上受到的外力是
+
+\begin{equation}
+F_z = \frac{\partial}{\partial z}\left(\bm{ \mu \cdot B} \right) \simeq \mu_z \frac{\partial B_z}{\partial z}
+\end{equation}
+
+\noindent 其中我们忽略了$\bm{B}$在其它方向上的分量。因为原子整体十分的沉重，我们期望经典意义的“轨道”还能够合理的用到这上面来；至于用海森堡不确定关系处理的办法后面会说到。如图{\ref{Fig1.1}}所示的仪器摆放，$\mu_z > 0\ \left(S_z < 0\right)$的原子受到向下的力，$\mu_z < 0\ \left(S_z > 0\right)$的原子受到向上的力。于是原子束就应该根据$\mu_z$的大小分裂。换句话说，SG（斯特恩-盖拉赫）装置“测量”了$\bm \mu$的$z$分量，也就是说测量了一个正比于$\bm S$的$z$分量的量。
+
+原子在高温箱内排列方向是随机的；它们的$\bm \mu$没有特别偏好的方向。如果电子就像一个经典的在自转的东西，我们可以期待$\mu_z$取从$\left|\bm \mu \right|$ 到$-\left|\bm \mu \right|$的所有值。这使得我们期望看到一摞连续的光束从SG装置内出来。就像{\ref{Fig1.1}}里面那样或多或少的成对称分布在期望的区间内。但是相反的是，我们实际上观察到的，同样是{\ref{Fig1.1}}所展现的，两个特别的“点”被观察到了，伴随着两个自旋的取向——“上”和“下”。换句话说，SG装置把原本的银原子束劈成两个截然不同的成分，这种现象在早期的量子理论中被称为“空间的量子化”。考虑到磁矩$\bm \mu$正比于电子自旋角动量$\bm S$，$S_z$只有两个可能的值：$S_z$向上和$S_z$向下，我们称之为$S_z+$ 和 $S_z-$。这两个可能的$S_z$取值是一些基本的角动量单位的倍数。数字上的来说发现$S_z = \hbar / 2$ 和 $-\hbar / 2$，其中
+
+\begin{equation}
+\begin{split}
+\hbar & = 1.054 \times 10^{-27} erg-s\\
+& = 6.5822 \times 10^{-16}eV-s
+\end{split}
+\end{equation}
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 8cm]{./Sakurai/Fig_1.2.png}
+\caption{(a)经典物理预言的斯特恩-盖拉赫实验结果。原子束应该在竖直方向上展开，大小应为磁矩乘以磁矩与竖直夹角的余弦值。然而，斯特恩和盖拉赫观察得到的却是(b)，只有两个特定的磁矩方向显现了出来。这两个方向并没有充满在整个预期的范围。}
+\label {Fig1.2}
+\end{centering}
+\end{figure}
+
+\noindent 这个电子自旋角动量“量子化”的现象\footnote{原注：对于如何理解这种量子化的实质，可以参看相对论对量子力学的运用，可以参考本书第8章第2 节的内容。}是我们从斯特恩盖-拉赫实验推得的第一个重要的现象。
+
+图{\ref{Fig1.2}}a 展现了人们预期从实验中观察到的现象；根据经典物理，原子束由于磁矩取向的连续性，自身应该在竖直方向上扩展。但相反的是，人们观察到的是图{\ref{Fig1.2}}b，完全与经典物理相悖。这束光神奇的自己分裂成两束，力部分对应自旋向上，另一部分对应自旋向下。
+
+当然，这种$z$方向的上-下取向并没有什么好惊奇的。我们可以同样将不均匀的场附加在$x$方向让原子束沿$y$方向传播。在这种情况下我们的原子束就会分成$S_x+$成分和$S_x-$成分了。\\
+
+\noindent {\textbf{“并联”的斯特恩-盖拉赫实验}}
+
+\noindent 我们现在考虑一系列“并联”的斯特恩-盖拉赫实验。这是指原子束连续经过两个或更多的SG设备。我们安排了多种方式，第一种是相对直观的一种。我们把从“烤箱”出来的原子束按照图{\ref{Fig1.3}}a中那样依次经过各装置，其中，SG${\hat{\bm z}}$指的是不均匀的磁场在$z$方向。我们如图一样挡住经过第一个SG 装置出来的那些$S_z-$的成分，然后让那些$S_z+$的成分再通过一个其它的SG${\hat{\bm z}}$装置。这一次只有一束出射的原子束 -- 只有$S_z+$成分。这个应该没什么好惊讶的，毕竟如果本身自旋就向上的话，两个SG$\hat{\bm z}$装置之间的几乎可以认为没有的外场不太可能让自旋翻转，所以原子们的自旋应该仍然保持向上。
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 10cm]{./Sakurai/Fig_1.3.png}
+\caption{“并联”的斯特恩-盖拉赫实验(们)}
+\label {Fig1.3}
+\end{centering}
+\end{figure}
+
+令人感兴趣的是图{\ref{Fig1.3}}b中的那种排列方式。在这里，第一个SG装置就像以前一样，但是第二个装置(SG$\hat{\bm x}$)却是在$x$方向上加了不均匀磁场。$S_z+$原子束进入第二个装置(SG$\hat{\bm x}$)现在分裂成两个成分，一个$S_x+$成分，一个$S_x-$成分，都有着同样的强度。我们如何解释这个现象呢？这是不是说$S_z+$原子束中$50\%$的原子是同时具有着$S_z+$和$S_x+$的，同时另外有$50\%$的原子是同时具有着$S_z+$和$S_x-$的呢？这表明这样一幅物理图景面临着很多困难，我们下面会看到。
+
+我们现在考虑第三种玩儿法，如图\ref{Fig1.3}c所示排列。这一步很可能最大程度的展现了量子系统的神奇的地方。这次我们在图{\ref{Fig1.3}}b后面再加入了一个装置，仍然是SG$\hat{\bm z}$类型。我们实验上观察到在第三个新加的装置后面出射了{\textbf{两}}中成分，而不是一种；出射原子束又有$S_z+$成分，又有$S_z-$成分。这实在是令人震惊了，因为从第一个装置出来之后应该就再也没有$S_z-$的成分了。我们想法中一开始就被消除的$S_z-$成分是怎么可能再生的呢？不过显然，原来设想的进入第三个装置的原子束是同时具有$S_z+$和$S_x+$显然并不能产生说服力。
+
+这个例子常常被用来说明量子力学里面我们不能同时的确定$S_z$和$S_x$。更准确的，我们可以说第二个装置(SG$\hat{\bm x}$)做的那个选择完全的破坏了之前的$S_z$ 的信息。
+
+如果把这个情况和一个经典物理里面的旋转的陀螺进行对比会很有趣的。陀螺的角动量为
+
+\begin{equation}
+\bm L = I\omega
+\end{equation}
+
+\noindent 可以通过测量角速度矢量$\bm \omega$的三个分量来逐一测量。通过观察这个物体转的，和它朝哪个方向转，我们就可以确定$\omega_x, \omega_y, \omega_z$。如果我们知道质量的密度和自转陀螺的几何形状的话，我们就可以得出转动惯量$I$，所以看起来在经典体系下我们可以轻松地区分$L_z$和$L_x$。
+
+可以很直接的感受到，我们遇到的$S_z$和$S_x$不能同时确定的限制并不是由于实验技术的不高超 -- 我们不可能凭借提升实验技术来做到图{\ref{Fig1.3}}c的装置后端不出射原子束。量子力学的特殊性和怪异性被实验本身很好地呈现出来了。而这种(不能同时确定)的限制，事实上，是这个微观现象所固有的。
+
+\noindent {\textbf{与偏振光的类比}}
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 9cm]{./Sakurai/Fig_1.4.png}
+\caption{光束透过偏振片}
+\label {Fig1.4}
+\includegraphics[width = 6cm]{./Sakurai/Fig_1.5.png}
+\caption{$x'$和$y'$方向}
+\label {Fig1.5}
+\end{centering}
+\end{figure}
+
+\noindent 因为，自旋的这一套看起来是这么的玄幻，因而做一些与我们已经熟悉的（或是说，经典的）物理体系的类比，对我们理解这套是很必要的。因此，我们先暂时结束讨论，转而看看光波的偏振。这种类比将会帮助我们建立一套针对我们之前做出的量子力学的假定的数学框架。
+
+考虑一束单色光，沿着$z$方向传播。一个线偏振（或平面偏振）的光振动方向在$x$方向。我们简称为$x$偏振光。它应该有如下的电场的时空关系：
+
+\begin{equation} \label{1.1.5}
+\bm E = E_0 \hat{\bm x} \cos (kz - \omega t)
+\end{equation}
+
+\noindent 同样的，我们考虑一束$y$偏振光，同样沿$z$传播。
+
+\begin{equation} \label{1.1.6}
+\bm E = E_0 \hat{\bm y} \cos (kz - \omega t)
+\end{equation}
+
+\noindent 有(\ref{1.1.5})或(\ref{1.1.6})形式的偏振光束可以通过让一个未偏振的光通过偏振片来得到。其中，如果某个偏振片只允许$x$方向偏振的光传播的话，那么这个偏振片就被称为$x$偏振片。一个$x$偏振片绕着$z$轴转$90^{\circ}$，理所当然的，就是$y$偏振片了。众所周知，当我们让一束光通过$x$偏振片之后立刻再通过$y$偏振片，那么没有光线会出射出来（假设我们考虑的是理想偏振片）；如图\ref{Fig1.4}a。
+
+如果我们在两个偏振片之间再加入一个$x'$偏振片 -- 在$xy$平面上与$x$轴成$45^{\circ}$夹角，如图\ref{Fig1.4}b所示。这回，有一定量的光经过$y$偏振片出来，尽管刚刚出了$x$偏振片之后光束是没有$y$方向电场分量的。换句话说，一旦$x'$介入进来了，并且选择了$x'$方向片真的光束的话，它之前是否是$x$方向不重要。对$x'$方向偏振的筛选破坏了之前光的偏振的一切信息。注意到这个情形和我们之前如图{\ref{Fig1.3}}处理多个SG装置组合是很相似的，就像这样：
+
+\begin{equation} \label{1.1.7}
+\begin{split}
+S_z \pm \text{原子} \leftrightarrow x-,\ y-\text{偏振光}\\
+S_x \pm \text{原子} \leftrightarrow x'-,\ y'-\text{偏振光}
+\end{split}
+\end{equation}
+
+\noindent 其中，$x'$轴和$y'$轴如图{\ref{Fig1.5}}定义。
+
+我们现在来看看如何在经典电动力学的框架下量化描述一个$45^{\circ}$偏振光($x'$和$y'$轴偏振光)的行为的。由图{\ref{Fig1.5}}我们有
+
+\begin{equation} \label{1.1.8}
+\begin{split}
+E_0\bm{\hat{x}}'\cos(kz-\omega t) = E_0\left[\frac{1}{\sqrt{2}}\bm{\hat{x}}\cos(kz-\omega t) + \frac{1}{\sqrt{2}}\bm{\hat{y}}\cos(kz-\omega t)\right]\\
+E_0\bm{\hat{y}}'\cos(kz-\omega t) = E_0\left[-\frac{1}{\sqrt{2}}\bm{\hat{x}}\cos(kz-\omega t) + \frac{1}{\sqrt{2}}\bm{\hat{y}}\cos(kz-\omega t)\right]
+\end{split}
+\end{equation}
+
+在图(\ref{Fig1.4})b的三偏振片组合中，原子束从第一个偏振片出来之后是标准的$\hat{\bm x}$偏振。当然也可以这种偏振模式写成$x'$和$y'$偏振的线性叠加，第二个偏振片选择了$x'$偏振的光，同样也可以重新写为$x$和$y$偏振的线性叠加。最后，第三个偏振片选择了$y$偏振的光。
+
+利用(\ref{1.1.7})展现的关系，带入到从图{\ref{Fig1.3}}c的连续斯特恩-盖拉赫实验到图{\ref{Fig1.4}}b的三偏振片实验，我们或许可以把银原子的自旋态用一种新的抽象的二维矢量空间，而不是通常意义的二维($xy$)空间，来表示出来。就如(\ref{1.1.8})中的用$\hat{x}$和$\hat{y}$作为基矢来分解$\hat{x}'$和$\hat{y}'$方向的偏振光，我们同样有道理去把$S_x +$的态用一个矢量来表示 -- 我们把它叫做狄拉克符号中的右矢，下一章我们会详尽的讲狄拉克符号。我们用$\left|S_x ;+\right\rangle$来表示这个矢量，然后把它用另外两个矢量$\left|S_z ;+\right\rangle$，$\left|S_x ;-\right\rangle$（分别代表$z$方向自旋向上\&向下的态）的线性组合。因此，我们推测：
+
+\begin{subequations} \label{1.1.9}
+\begin{align}
+\left|S_x ;+\right\rangle \overset{?}= \frac{1}{\sqrt{2}} \left|S_z ;+\right\rangle + \frac{1}{\sqrt{2}}\left|S_z ;-\right\rangle \label{1.1.9a}\\
+\left|S_x ;-\right\rangle \overset{?}= -\frac{1}{\sqrt{2}}\left|S_z ;+\right\rangle + \frac{1}{\sqrt{2}}\left|S_z ;-\right\rangle
+\end{align}
+\end{subequations}
+
+\noindent 来类比(\ref{1.1.8})。稍后我们会如何用量子力学的一般方法来得到这些表达式。
+
+总之，那些图(\ref{Fig1.3})c中没被第二个装置(SG$\hat{x}$)挡住的成分，可以看做$S_z +$和$S_z -$的叠加态，就像(\ref{1.1.9a})那样。正因为如此，通过第三个装置(SG$\hat{z}$)后才会有两种成分。
+
+我们紧接着就想到下一个问题：如何确定$S_y \pm$态？对称性说明，如果我们观测到了一个沿着$x$方向传播的$S_z \pm$经过一个SG$\hat{y}$得到的结果应该和观测一个沿着$y$方向传播的$S_z \pm$经过一个SG$\hat{x}$得到的结果非常相似。因此，$S_y \pm$的右矢们当然也应该是$\left|S_z; \pm\right\rangle$的线性叠加啦。但是，从(\ref{1.1.9})中看出，我们似乎已经用尽了所有的组合办法来写$\left|S_x ;\pm\right\rangle$，我们该如何构建矢量空间使得$S_y \pm$态和$S_x$态截然区分呢？
+
+此时，与偏振光的类比再一次拯救了我们。这次我们考虑一束圆偏振光。这可以通过让一束线偏振光穿过四分之一波片来得到。我们让这个圆偏振光通过$x$或$y$偏振片，我们得到$x$方向或$y$方向偏振的光，当然强度是一样的。但是我们当然都知道，这和$45^{\circ}$偏振光($x'$或$y'$偏振)完全不是一回事。
+
+数学上讲，我们如何描述一个圆偏振光呢？右旋圆偏振光无非就是$x$和$y$方向的偏振光的线性组合，其中电场的$y$分量相比于$x$分量有$90^{\circ}$的相位落后\footnote{原注：遗憾的是，左旋和右旋的定义在不同的书中是不一样的}：
+
+\begin{equation}
+\bm E = E_0 \left[\frac{1}{\sqrt{2}} \hat{\bm x}\cos\left(kz - \omega t\right) + \frac{1}{\sqrt{2}} \hat{\bm y}\cos\left(kz - \omega t + \frac{\pi}{2}\right)  \right]
+\end{equation}
+
+\noindent 一个看起来更精巧的做法是引入复数标记$\epsilon$如下
+
+\begin{equation}
+\text{Re}(\epsilon) = \bm{E} / E_0
+\end{equation}
+
+\noindent 对于一个右旋偏振光，我们有
+
+\begin{equation}  \label{1.1.12}
+\epsilon = \left[\frac{1}{\sqrt{2}} \hat{\bm x}e^{i(kz - \omega t)} + \frac{i}{\sqrt{2}} \hat{\bm y}e^{i(kz - \omega t)}  \right]
+\end{equation}
+
+\noindent 其中利用了$i = e^i\pi / 2$
+
+我们可以做如下一个银原子自旋态的类比：
+
+\begin{equation}
+\begin{split}
+S_y + \text{原子} \leftrightarrow \text{右旋偏振光}\\
+S_y - \text{原子} \leftrightarrow \text{左旋偏振光}
+\end{split}
+\end{equation}
+
+\noindent 把这个类比带入到(\ref{1.1.12})中，我们来看看是否能够把展开的系数补上复数。我们发现把$S_y \pm$原子纳入我们的矢量空间没有任何问题。
+
+\begin{equation}
+\left|S_y ;\pm \right\rangle \overset{?}= \frac{1}{\sqrt{2}}\left|S_z ;+\right\rangle \pm \frac{i}{\sqrt{2}}\left|S_z ;-\right\rangle
+\end{equation}
+
+\noindent 很明显看起来与{\ref{1.1.9})不一样。于是我们看出来，需要去完整描述银原子自旋的二维矢量空间必须是\emph{复数}空间。任意的一个矢量都会写成$\left|S_z; \pm\right\rangle$的线性组合，当然，一般来讲系数都是复系数。作为一个事实，这么基本的一个例子也明显的需要引入复系数，这还是蛮值得注意的。
+
+读者肯定注意到我们这里故意的避开了光子。换句话说，我们在这里完全没有管光的量子性：我们根本没有提及单光子的偏振态。事实上，我们做的类比是描述单一原子的自旋的抽象向量空间与\emph{经典电磁场}的偏振的。
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 12.4cm]{./Sakurai/Fig_1.6.png}
+\caption{一个现今的斯特恩-盖拉赫实验装置，用来分开原子铯的不同自旋态，图来自F. Lison et al., {\emph {Phys. Rev. A}} {\textbf{61}}(1999) 013405。 装置如左侧显示，数据展现了自旋为4粒子的九个峰，(a)和(b)分别代表筛选最强自旋之前和之后的数据。自旋量子数$F=4$是由于最外层电子的自旋与核自旋$I=7/2$耦合的结果。}
+\label {Fig1.6}
+\end{centering}
+\end{figure}
+
+最终，在给出我们量子力学所需要的数学体系之前，我们着重的强调了斯特恩-盖拉赫装置所展现出来的物理规律，不仅仅是出于对学术的兴趣；分离原子不同的自旋态的能力同样也是我们极为感兴趣的。图{\ref{Fig1.6}}展现了用斯特恩-盖拉赫技术分析了对铯原子束自旋进行操作的结果。这个碱金属它唯一稳定的同位素，$\ ^{133}\text{Cs}$，的核自旋$I = 7/2$，而实验发现粒子束分成了$9$个自旋取向的$F = 4$超精细磁态。这仅仅是诸多把这一一度神秘的现象用于实际装置的例子之一罢了。当然啦，这么多的实验更加的使我们确信了我们接下来要展现并讨论的量子力学基本原理。
+
+
+\subsection{左矢，右矢和算符}
+
+\noindent 前面的章节我们展现了对斯特恩-盖拉赫实验的分析是如何引导我们去想象一个复数的向量空间的。
+
+\subsection{基矢和算符的矩阵表示}
+\subsection{测量，可观测量和不确定关系}
+\subsection{变换基矢的情况}
+\subsection{坐标，动量和平移}
+\subsection{坐标空间和动量空间的波函数}
+
+\end{document}

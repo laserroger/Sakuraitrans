@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {4}量子力学中的对称性}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}对称性，守恒律，简并}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}分立对称性，宇称，或空间反演}{13}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}格点平移的分立对称性}{25}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}时间反演的分立对称性}{29}{subsection.4.4}

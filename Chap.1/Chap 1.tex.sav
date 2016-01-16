@@ -1,0 +1,459 @@
+﻿\documentclass[UTF8,twoside]{ctexart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{bibentry}
+\usepackage{multirow}
+\usepackage[CJKbookmarks=true]{hyperref}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usepackage{bm}
+
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{equation}{section}
+\makeatother % `@' is restored as 'non-letter'
+\renewcommand\theequation{\oldstylenums{\thesubsection}%
+.\oldstylenums{\arabic{equation}}}
+
+\DeclareMathOperator{\res}{Res}
+
+\begin{document}
+\setcounter{section}{-1}
+\title{现代量子力学}
+\author{J. J. Sakurai \\ 翻译：Laserdog}
+
+\maketitle
+\thispagestyle{empty}
+
+\cleardoublepage
+
+\tableofcontents
+\clearpage
+\section{译者日记}
+译者是个大学渣，看此书觉得炒鸡好，遂想翻译它；无奈译者一方面水平捉急，很难翻译到位，另一方面译者也没有版权，翻译完也只能在小范围内教学使用而不能用于商业用途。所以，对本书的这个翻译有任何不满，你来打我啊！
+
+说点主要的：我这个翻译整体布局还是遵循了原书的，保留了原书的注解，公式使用符号和角标都一致。但是本书最大的问题是没法弄来清晰的图片，这个实在是没办法了，大家见谅。同时，我也懒得翻译它的前言了，你们自己脑补。
+
+我也对书的模式进行了小小的修改，我在每个subsection里面都加入了一个本部分主要内容的概览，并试图引入内链。由于写这个前言的时候相当的早，不知道能不能成功实现我的想法，所以只能说“试图”引入，这也是没办法的哈。同时，对于我自己看的时候遇到的一些问题，我也加入了自己的理解；一些和国内常见教材不太一样的说法我也进行了注解。
+
+2014年4月27日于北京大学\\
+
+在今天，我又找到了一位小伙伴帮忙翻译。这位小伙伴对翻译这种教科书的经验不足，但是仍对我产生了很大的帮助；他初期主要帮我弥补了我之前懒得翻译的前言，在之后将和我一起展开对正文的翻译。目前的计划是我翻译第一章的前两节、第三章及后面的内容，而他翻译第一章剩余部分和第二章。
+
+2014年6月14日于北京大学\\
+
+今天又找到了一位小伙伴来翻译。这位小伙伴的翻译功底很好，我觉得会帮助我更快的完成翻译；不过这位小伙伴貌似不一定对专业内容感兴趣，苦恼啊。不过这不重要~总之我先拜托他翻译前言的一部分了。后面的话，第二章可能也会交给他。
+
+还有一个好消息，就是另一位小伙伴答应下个月帮我弄了。这位小伙伴在英国留学，学的就是物理，所以应该专业能力、英文水准都一流。我计划是我和他轮流翻译第三章及后面的内容。
+
+不过呐，也是时候专门为这个建一个github点了，已经变成一个大的而且开工的project了。
+
+2014年6月15日于北京大学，水四级感觉不上600对不起我\\
+
+真是一个不幸的消息，我的第一位翻译助手可能因故无法继续帮忙翻译了。但是他的事情也给了我很大触动。我觉得我一定要把这个翻译进行到底，也算是对他的一种肯定和鼓励。希望他能走出阴影。
+
+虽然发生了这种悲伤地事情，我的project也得继续。我打算把翻译计划重新更改。我将负责翻译第一章，而全部的前言都交给2号助手，我们先用“张”来代指他。正式的前言里面会详尽介绍。
+
+2014年6月15日于北京大学，外面的天气好阴沉\\
+
+最近事情很多，上课、开组会、读paper。进度很慢，我感觉甚至不够时间。我真希望能完成这项伟业。
+
+不过因为高量课的学习，我又有必要回顾一下这本书的大部分内容，收获颇丰，受益匪浅；因此我就更有必要把它翻译出来，供那些怪才们使用。
+
+2014年10月30日于北京大学，期中真的快来了啊\\
+
+
+
+
+
+
+\newpage
+\section{基本概念}
+\noindent 20世纪最开始的那27年可谓说使我们对于微观现象的认识发生了革命性的变化，这是科学史上前所未有的。我们见证了经典物理面临的严峻考验，从而诞生出了替代的理论，在更大的尺度和更广的范围内成功的代替了经典理论。
+
+我们以前通常的学习量子力学的方式是尊崇它的历史发展规律 - 先从普朗克的黑体辐射定律、爱因斯坦 - 德拜固体热容量、波尔氢原子模型、德布罗意物质波等等一些列的基本理论，伴随着一些重要的实验和对应的细致的分析 - 像康普顿散射、弗兰克-赫兹实验、戴维斯-革末实验\footnote{译者注：原书说的是Davisson-Germer-Thompson 实验。反正指的就是那个用电子衍射证明德布罗意说的有点道理的那个实验。}。这种学习方式可以让我们感受物理学家最开始是如何一点一点被迫放弃掉“完美”的经典力学的概念，然后在几位大师（不要在意他们犯下的一些学术上的错误） —海森堡、薛定谔、狄拉克以及其他所有对量子力学的发展作出贡献的人— 的努力下，最终成功的给出了我们如今看到的学到的量子力学。
+
+然而，我们并不打算遵从这套顺序来学习。相反，我们将从一个特别的实验来入手 - 这个实验，从某种程度上来说，最大程度的从基本的层面展现了经典概念不足。我们希望在最开始给读者一个像“休克疗法”一样巨大的刺激，然后在顺其自然的引导下进入我们所希望看到的的“量子力学的思考方式”。
+
+值得注意的是，这种不同的学习方式不仅仅是一次学术上的尝试。我们的对物理世界的知识都是来自这样一种模式\footnote{译者注：不仅仅是物理，任何自然科学都是这样的。}：我们对于自然做出的猜想，用数学的方式把这些猜想演化成基本假设，再从这些基本假设出发得到一些我们能够做出的“预言”，然后用实验来检验我们做出的预言是否正确。如果不正确，那么我们就知道，我们最开始做出的猜想并不正确。我们这种学习方式强调了最基本的对于自然的猜想，基于我们所有的物理学定律，目标是在最开始就能和量子力学情境下的观测和实验达成一致。
+
+\subsection{斯特恩-盖拉赫实验}
+
+\subsubsection{本节框架}
+
+\noindent 本节的内容先进行了一个对我们关注的实验的历史的回顾，然后详尽的描述了这个实验，再利用这个实验和基本的逻辑关系推出如果把多个相同的实验仪器“并联”会发生什么现象，再与一些已有定论的现象（光的偏振）进行类比，合理的引入复数，从而展现一种不一样的量子的世界观。
+
+
+\subsubsection{正文内容}
+
+\noindent 正如上面所说，我们这一节要关注一个实验 - 斯特恩-盖拉赫实验。这个实验最初由斯特恩在1921年观测到，然后在法兰克福，由盖拉赫的合作下在1922 年完善实施。\footnote{原注：关于这个实验更多的历史和讨论，详见Bretislav Friedrich 和 Dudley Herschbach 写的 "Stern and Gerlach: How a Bad Cigar Helped Atomic Physics"（刊载在"Physics Today"上，2003年53号）。\\ 译者注：至少在写这个注释的时候，译者打算去翻译一下这篇文章扔在附录里面。原文地址：
+\url{http://www.fisica.ufpb.br/~jgallas/CURSOS/Estrutura02/friedrich_herschbach_stern_gerlach_bad_cigar_helped_atomic_phys_PT2003.pdf}}
+这个实验充分的表明了将经典力学的概念无情的抛弃的必要性。在接下来的几节中，我们的量子力学的公式将会展现出一种公理一样的感觉，但是我们都能从这个实验的例子中获得一种心安理得的“合理感”。从某种角度讲，斯特恩-盖拉赫实验所展现的双态系统\footnote{译者注：其实吧这个可以翻译成二能级体系，但是并不准确 - 二能级主要强调的是能级，但是同一能级可能是不同的状态，这与原文 two-state system 并不吻合。} 是与经典体系最不相似而最能体现量子力学的了。对这种双态系统的深刻理解值得任何一位认真学习量子力学的同学去深入研究。因此，纵观整本书，我们都会多次提到这个双态系统。\\
+
+\begin{figure}  
+\begin{centering}
+\includegraphics[width = 8cm]{./Sakurai/Fig_1.1.png}
+\caption{斯特恩-盖拉赫实验}
+\label {Fig1.1}
+\end{centering}
+\end{figure}
+
+
+\noindent {\textbf{实验的描述}}
+
+\noindent 我们现在展开一个对斯特恩-盖拉赫实验的简短的讨论 - 这几乎在任何一本现代物理的书中都会被提到\footnote{原注：一个基本但是很有启发性的有关这个实验的讨论请看：French, Anthony Philip, and Edwin F. Taylor. An introduction to quantum physics. CRC Press, 1979. 的第432-438页。\\ 译者注：以及，虽然很不齿，但是最直接的观看相关内容的办法是在新浪爱问里面搜索相关内容。 }。首先，我们先把银原子(Ag)在“烤箱”里面进行加热。这个烤箱呢，在壁上有一个洞；这就导致了一些银原子会从这个洞里面跑出去。如图1.1所示，这些原子，经过一个准直仪后会形成“一束”银原子，然后通过一个由一对有着尖锐边缘的磁铁\footnote{译者注：这里面之所以要用这么复杂的句子来说明这个磁铁，是因为这样才会形成明显的不均匀的磁场。详情可以参考类似于尖端放电等事情。}产生的不均匀的磁场。
+
+我们得研究一下这期间磁场对原子的作用。为此，我们接下来将会极度的简化这个模型。银原子由原子核和47个电子构成，其中的46个原子都可以看成是“隐形的”，它们形成球对称分布从而不对角动量或者其他量产生贡献\footnote{译者注：也就是说，他们都不是最外层电子，由于一些更为复杂的效应，他们在我们的模型里面不贡献。为便于理解，你可以把它想象成一个原子核质量很大的氢原子}。如果我们忽略那个与我们问题不相关的核的自选，我们可以发现，整个原子自身确实有一个仅依赖于电子自旋的角动量 -- 它是一个内禀的量，不像轨道角动量那样 -- 由银原子第47个(5s)电子提供的角动量。第47好电子被束缚在相当于它重量$2\times 10^5$倍的核的附近；因此，这个重原子整体表现了一个与47号电子自旋磁矩相同的磁矩。
+
+\begin{equation}
+{\bm{\mu}} \propto S
+\end{equation}
+
+\noindent 其中这个准确的比例系数应该是$e/m_e c$\footnote{原注：在本书中$e$<0}，精确度大概到了$0.2\%$的量级。
+
+因为磁矩和外磁场的相互作用能是$\boldmath{\mu \cdot B}$，原子在$z$方向上受到的外力是
+
+\begin{equation}
+F_z = \frac{\partial}{\partial z}\left(\bm{ \mu \cdot B} \right) \simeq \mu_z \frac{\partial B_z}{\partial z}
+\end{equation}
+
+\noindent 其中我们忽略了$\bm{B}$在其它方向上的分量。因为原子整体十分的沉重，我们期望经典意义的“轨道”还能够合理的用到这上面来；至于用海森堡不确定关系处理的办法后面会说到。如图{\ref{Fig1.1}}所示的仪器摆放，$\mu_z > 0\ \left(S_z < 0\right)$的原子受到向下的力，$\mu_z < 0\ \left(S_z > 0\right)$的原子受到向上的力。于是原子束就应该根据$\mu_z$的大小分裂。换句话说，SG（斯特恩-盖拉赫）装置“测量”了$\bm \mu$的$z$分量，也就是说测量了一个正比于$\bm S$的$z$分量的量。
+
+原子在高温箱内排列方向是随机的；它们的$\bm \mu$没有特别偏好的方向。如果电子就像一个经典的在自转的东西，我们可以期待$\mu_z$取从$\left|\bm \mu \right|$到$-\left|\bm \mu \right|$的所有值。这使得我们期望看到一摞连续的光束从SG装置内出来。就像{\ref{Fig1.1}}里面那样或多或少的成对称分布在期望的区间内。但是相反的是，我们实际上观察到的，同样是{\ref{Fig1.1}}所展现的，两个特别的“点”被观察到了，伴随着两个自旋的取向——“上”和“下”。换句话说，SG装置把原本的银原子束劈成两个截然不同的成分，这种现象在早期的量子理论中被称为“空间的量子化”。考虑到磁矩$\bm \mu$正比于电子自旋角动量$\bm S$，$S_z$只有两个可能的值：$S_z$向上和$S_z$向下，我们称之为$S_z+$ 和 $S_z-$。这两个可能的$S_z$取值是一些基本的角动量单位的倍数。数字上的来说发现$S_z = \hbar / 2$ 和 $-\hbar / 2$，其中
+
+\begin{equation}
+\begin{split}
+\hbar & = 1.054 \times 10^{-27} erg-s\\
+& = 6.5822 \times 10^{-16}eV-s
+\end{split}
+\end{equation}
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 8cm]{./Sakurai/Fig_1.2.png}
+\caption{(a)经典物理预言的斯特恩-盖拉赫实验结果。原子束应该在竖直方向上展开，大小应为磁矩乘以磁矩与竖直夹角的余弦值。然而，斯特恩和盖拉赫观察得到的却是(b)，只有两个特定的磁矩方向显现了出来。这两个方向并没有充满在整个预期的范围。}
+\label {Fig1.2}
+\end{centering}
+\end{figure}
+
+\noindent 这个电子自旋角动量“量子化”的现象\footnote{原注：对于如何理解这种量子化的实质，可以参看相对论对量子力学的运用，可以参考本书第8章第2 节的内容。}是我们从斯特恩盖-拉赫实验推得的第一个重要的现象。
+
+图{\ref{Fig1.2}}a 展现了人们预期从实验中观察到的现象；根据经典物理，原子束由于磁矩取向的连续性，自身应该在竖直方向上扩展。但相反的是，人们观察到的是图{\ref{Fig1.2}}b，完全与经典物理相悖。这束光神奇的自己分裂成两束，力部分对应自旋向上，另一部分对应自旋向下。
+
+当然，这种$z$方向的上-下取向并没有什么好惊奇的。我们可以同样将不均匀的场附加在$x$方向让原子束沿$y$方向传播。在这种情况下我们的原子束就会分成$S_x+$成分和$S_x-$成分了。\\
+
+\noindent {\textbf{“并联”的斯特恩-盖拉赫实验}}
+
+\noindent 我们现在考虑一系列“并联”的斯特恩-盖拉赫实验。这是指原子束连续经过两个或更多的SG设备。我们安排了多种方式，第一种是相对直观的一种。我们把从“烤箱”出来的原子束按照图{\ref{Fig1.3}}a中那样依次经过各装置，其中，SG${\hat{\bm z}}$指的是不均匀的磁场在$z$方向。我们如图一样挡住经过第一个SG 装置出来的那些$S_z-$的成分，然后让那些$S_z+$的成分再通过一个其它的SG${\hat{\bm z}}$装置。这一次只有一束出射的原子束 -- 只有$S_z+$成分。这个应该没什么好惊讶的，毕竟如果本身自旋就向上的话，两个SG$\hat{\bm z}$装置之间的几乎可以认为没有的外场不太可能让自旋翻转，所以原子们的自旋应该仍然保持向上。
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 10cm]{./Sakurai/Fig_1.3.png}
+\caption{“并联”的斯特恩-盖拉赫实验(们)}
+\label {Fig1.3}
+\end{centering}
+\end{figure}
+
+令人感兴趣的是图{\ref{Fig1.3}}b中的那种排列方式。在这里，第一个SG装置就像以前一样，但是第二个装置(SG$\hat{\bm x}$)却是在$x$方向上加了不均匀磁场。$S_z+$原子束进入第二个装置(SG$\hat{\bm x}$)现在分裂成两个成分，一个$S_x+$成分，一个$S_x-$成分，都有着同样的强度。我们如何解释这个现象呢？这是不是说$S_z+$原子束中$50\%$的原子是同时具有着$S_z+$和$S_x+$的，同时另外有$50\%$的原子是同时具有着$S_z+$和$S_x-$的呢？这表明这样一幅物理图景面临着很多困难，我们下面会看到。
+
+我们现在考虑第三步，如图\ref{Fig1.3}c所示排列。这一步很可能
+
+\noindent {\textbf{与偏振光的类比}}
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 10cm]{./Sakurai/Fig_1.4.png}
+\caption{光束透过偏振片}
+\label {Fig1.4}
+\includegraphics[width = 7cm]{./Sakurai/Fig_1.5.png}
+\caption{$x'$和$y'$方向}
+\label {Fig1.5}
+\end{centering}
+\end{figure}
+
+\noindent 因为，自旋的这一套看起来是这么的熟悉，因而做一些与我们已经熟悉的（或是说，经典的）物理体系的类比，对我们理解这套是很必要的。因此，我们先暂时结束讨论，转而看看光波的偏振。这种类比将会帮助我们建立一套针对我们之前做出的量子力学的假定的数学框架。
+
+考虑一束单色光，沿着$z$方向传播。
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 12cm]{./Sakurai/Fig_1.6.png}
+\caption{一个现今的斯特恩-盖拉赫实验装置，用来分开原子铯的不同自旋态，图来自F. Lison et al., {\emph {Phys. Rev. A}} {\textbf{61}}(1999) 013406}
+\label {Fig1.6}
+\end{centering}
+\end{figure}
+
+
+\subsection{左矢，右矢和算符}
+
+
+
+\subsection{基矢和算符的矩阵表示}
+\subsection{测量，可观测量和不确定关系}
+\subsection{变换基矢的情况}
+\subsection{坐标，动量和平移}
+\subsection{坐标空间和动量空间的波函数}
+\clearpage
+
+\section{量子情景的演化}
+
+\noindent 前面讲了这么多，我们还是没有去讲一个物理意义上的系统是如何随着时间变化的。本章将会详尽的讲解体系右矢的动力学演化，以及可观测量。换句话说，我们现在要研究的就像“牛顿”动力学方程（或“哈密顿”动力学方程）一样。
+
+\subsection{时间演化和薛定谔方程}
+\subsection{汇景：薛定谔 vs 海森堡}
+\subsection{简单谐振子}
+\subsection{薛定谔波动方程}
+\subsection{薛定谔方程的基本解}
+\subsection{传播子和费曼路径积分}
+\subsection{势能和规范变换}
+
+\clearpage
+\section{角动量理论}
+
+\subsection{转动，和角动量对易关系}
+\subsection{自旋 - $\frac{1}{2}$体系和有限转动}
+\subsection{SO(3), SU(2), 欧拉转动}
+\subsection{密度算符，以及纯态 vs 混态系综}
+\subsection{角动量的本征值和本征态}
+\subsection{轨道角动量}
+
+\noindent 我们把角动量作为无限小转动的生成元来介绍给大家。当自旋角动量维是$0$或可以忽略的时候我们这里有其他的办法来处理角动量。角动量$\bm J$对于一个单粒子就像轨道角动量一样了，即
+
+\begin{equation} \label{3.6.1}
+\bm L = \bm{x\times p}
+\end{equation}
+
+\noindent 本节我们讨论这两种方法的联系。\\
+
+\noindent \textbf{作为转动生成元的轨道角动量}
+
+\subsection{中心势中的薛定谔方程}
+\subsection{Addition to 角动量}
+\subsection{Schwinger的角动量振子模型}
+\subsection{自旋相互作用测量，以及贝尔不等式}
+\subsection{张量算符}
+
+\clearpage
+\section{量子力学中的对称性}
+\noindent 考虑到我们已经详尽的学习了转动理论，我们现在显然处于急需要讨论更一般的关于“对称性”，“简并”，和“守恒律”的内容。我们故意的推迟到现在才讲如此重要的一个话题是因为我们终于可以用我们在第三章中学到的转动对称性的知识作为一个很好的例子。
+
+\subsection{对称性，守恒律，简并}
+\noindent {\textbf{经典物理中的对称性}}
+
+\noindent 我们从对经典物理中的对称性和守恒律的概念做一个基本的回顾。在拉格朗日体系下的量子力学，我们先看拉格朗日量$L$：这是一个有关广义坐标$q_i$，和相应的广义速度$\dot{q}_i$的函数。如果$L$在如下置换中保持不变：
+
+\begin{equation} \label{4.1.1}
+q_i\rightarrow q_i + \delta q_i
+\end{equation}
+
+\noindent 那么我们就必须有
+
+\begin{equation}
+\frac{\partial{L}}{\partial{q_i}} = 0
+\end{equation}
+
+\noindent 接下来，根据拉格朗日方程，$d/dt(\partial L/\partial \dot{q}_i) - \partial L /\partial q_i = 0$，有
+
+\begin{equation}
+\frac{dp_i}{dt} = 0
+\end{equation}
+
+\noindent 其中正则动量定义为
+
+\begin{equation}
+p_i = \frac{\partial L}{\partial \dot{q}_i}
+\end{equation}
+
+\noindent 如果拉格朗日量$L$在({\ref{4.1.1}})中的变换下保持不变，那么相应的$q_i$所对应的正则动量，就成为了守恒量。
+
+类似的，在哈密顿力学体系下，哈密顿量$H$看为是广义坐标$q_i$和广义动量$p_i$的函数，我们有
+
+\begin{equation}
+\frac{dp_i}{dt} = 0
+\end{equation}
+
+\noindent 每当
+
+\begin{equation}
+\frac{\partial H}{\partial q_i} = 0
+\end{equation}
+
+\noindent 所以，如果哈密顿量并不显含$q_i$的话，换句话说$H$具有在$q_i \rightarrow q_i + dq_i$的对称性的话，我们就有了守恒的量。\\
+
+\noindent {\textbf{量子力学中的对称性}}
+
+\noindent 在量子力学中我们已经学习了一个{\textbf{Unitary 算符}}\footnote[1]{如同上几章强调过的，我打算以后都写成Unitary 算符来代替酉算符，因为这个翻译太蠢了}，比如说$\mathscr{G}$，如何与平移、转动算符建立关系。习惯来讲会把$\mathscr{G}$叫成一个{\textbf{对称算符}}不管它是否是一个物理体系自身展现的对称性所对应的算符。更进一步，我们学过了对称算符在无穷小变化下与identity\footnote[2]{就是不变换，保持自身的单位算符}的差异，我们可以写出
+
+\begin{equation}
+\mathscr{G} = 1 - \frac{i\epsilon}{\hbar}G
+\end{equation}
+
+\noindent 其中 $G$ 是这个问题中对称性算符的厄米生成元。我们现在假定$H$在$\mathscr{G}$下保持不变，那么就有
+
+\begin{equation}
+\mathscr{G}^{\dagger} H \mathscr{G} = H
+\end{equation}
+
+\noindent 这就相当于
+
+\begin{equation} \label{4.1.9}
+\left[G, H\right] = 0
+\end{equation}
+
+\noindent 根据海森堡的动力演化方程，我们有
+
+\begin{equation} \label{4.1.10}
+\frac{dG}{dt} = 0
+\end{equation}
+
+\noindent 因此，$G$是一个动力学常数。比方说，哈密顿量$H$在平移下保持不变，那么动量相应的就是一个动力学常数。
+
+当$G$和$H$对易的时候，一个很有意义的做法是，从$G$的本征矢的角度来简单的回顾一下({\ref{4.1.9}})与$G$守恒之间的关系。假定在$t_0$时间，系统处于$G$ 的本征态，那么这个态之后的演化可以有时间演化算符来描述：
+
+\begin{equation}
+\left|g', t_0; t\right\rangle = U\left(t, t_0\right)\left|g'\right\rangle
+\end{equation}
+
+\noindent 这同样还是$G$的具有相同本征值$g'$的本征态。换句话说，一旦一个态矢是$G$的本征态，他就将会一直是$G$的本征态且具有相同的本征值。当然，这个证明在考虑到({\ref{4.1.9}})和({\ref{4.1.10}})同样表明了$G$与时间演化算符对易，即
+
+\begin{equation}
+G\left[U\left(t, t_0\right)\left|g'\right\rangle\right] = U\left(t, t_0\right)G\left|g'\right\rangle = g' \left[U\left(t, t_0\right)\left|g'\right\rangle\right]
+\end{equation}
+\\
+
+\noindent {\textbf{简并}}
+
+\noindent 我们现在来看看有关简并的概念。尽管简并可以很大程度的在经典力学的程度内进行讨论 -- 比如，讨论闭合无进动轨道的开普勒问题 (Goldstein 2002)\footnote[3]{Goldstein, Herbert, et al. "Classical mechanics." American Journal of Physics 70.7 (2002): 782-783.} -- 这个概念在量子力学中其实起着更重要的左右。我们假定下列关系
+
+\begin{equation}
+\left[H, \mathscr{G}\right] = 0
+\end{equation}
+
+\noindent 对于一些特定的对称算符，在能量$E_n$的本征基矢$\left|n\right\rangle$下成立。
+
+\noindent 那么，$\mathscr{G}\left|n\right\rangle$同样也是能量本征态且具有相同的能量，因为
+
+\begin{equation}
+H\left(\mathscr{G}\left|n\right\rangle\right) = \mathscr{G}H\left|n\right\rangle = E_n \left(\mathscr{G}\left|n\right\rangle\right)
+\end{equation}
+
+\noindent 现在假定$\left|n\right\rangle$和$\mathscr{G}\left|n\right\rangle$表示不同的态。那么，这两个态具有相同的能量 -- 这就是说它们简并。通常来说这类$\mathscr{G}$由连续的参数来标记，比如说$\lambda$，表面对于所有的态，$\mathscr{G}\left(\lambda\right)\left|n\right\rangle$都具有相同的能量。
+
+我们现在特别的来考虑转动，假定哈密顿量是转动不变的，我们有
+
+\begin{equation}
+\left[\mathcal{D}\left(R\right), H\right] = 0
+\end{equation}
+
+\noindent 这立马就表明了
+
+\begin{equation}
+\left[{\textbf{J}}, H\right] = 0,\ \ \ \left[{\textbf{J}}^2, H\right] = 0
+\end{equation}
+
+\noindent 我们于是就建立了$H,\  \textbf{J}^2,\  \textbf{J}_{z}$的共同本征态，用$\left|n; j, m\right\rangle$来标记。那么我们就得到了所有的
+
+\begin{equation}
+\mathcal{D}\left(R\right)\left|n; j, m\right\rangle 
+\end{equation}
+
+\noindent 拥有同样的能量。我们在第3章中看到，在转动变换下不同的$m$值被“混在了一起”。总的来说，$\mathcal{D}\left(R\right)\left|n; j, m\right\rangle$是一个关于$2j + 1$个线性无关的态的线性组合。准确地讲就是
+
+\begin{equation}
+\mathcal{D}\left(R\right)\left|n; j, m\right\rangle = \sum_{m'} \left(R\right)\left|n; j, m‘\right\rangle \mathcal{D}^{\left(j\right)}_{m'm}\left(R\right)
+\end{equation}
+
+\noindent 然后，通过改变那个表示转动情况的连续的参数，对应的$\mathcal{D}\left(R\right)$，我们可以得到不同的关于$\left|n; j, m‘\right\rangle$的线性组合。如果对于任意一个$\mathcal{D}\left(R\right)$，所有的具有$\mathcal{D}\left(R\right)\left|n; j, m\right\rangle$形式的态都有相同的能量，那我们就可以说所有的具有不同的$m$的$\left|n; j, m\right\rangle$都具有相同的能量。所以这里的简并是$(2j+1)$重的，即是$m$所有可能选取值的个数。这一点同样可以通过如下方式直观的得出：不同的$m$的态可以利用升降算符$J_{\pm}$得到，而升降算符是和$H$对易的，所以$\left|n; j, m\right\rangle$具有相同的能量。
+
+作为一个对对称性的应用，我们考虑一个原子中的电子，它的势能可以写作$V(r)+V_{LS}\bm{L \cdot S}$。因为$r$和$\bm{L\cdot S}$都是旋转不变的，我们期待每个原子能级有一个$(2j+1)$重的简并。另一方面，假定这里有外加电场或者磁场，比如$z$方向。旋转对称性如今显得被破坏了，所以不太可能有$(2j+1)$重简并了，而且不同的$m$对应的态也不太可能有相同的能量。我们将在第5章来检验这种分裂是如何产生的。\\
+
+\noindent {\textbf{库伦势中的SO(4)对称性}}
+
+\noindent 一个非常合适的关于量子力学的连续对称性的例子就是氢原子库伦势问题。我们在第3章第7节层讨论过这个问题，在那里我们发现在式({\ref{3.7.53}})中的能量本征值极强的表现了({\ref{3.7.56}})中的简并。如果体系的简并是偶然的那将会更引人注目，但是实际上，这是由于$1/r$势的束缚态所有的附加对称性。
+
+经典问题中，这种势的轨道，即开普勒问题，在量子力学之前就已经被仔细的研究过了。至于椭圆轨道是闭合的意味着应该有一些（矢量）运动常数来维持椭圆轨道的主轴方向。我们知道，即使是相比于$1/r$的一个小偏移都会导致主轴的进动，所以我们期望找到一个$1/r$势独特的运动常数。
+
+经典的来说，这个常数是
+
+\begin{equation}  \label{4.1.19}
+\bm{M} = \frac{\bm{p\times L}}{m} - \frac{Ze^2}{r}\bm r
+\end{equation}
+
+\noindent 我们使用了在第3章第7节中使用过了的记号。这个常数矢量实际上被称为“伦茨矢量”，或者“伦格-伦茨矢量”\footnote[4]{$Runge-Lenz\  vector$}。 不想经典力学那样处理它，我们在量子框架下的对称性的手段来处理这个运动常数。
+
+这个新的对称性，我们称之为SO(4)，与我们在第3章第3节学到的SO(3)是完全类似的。这就是说，SO(4)是一个$4\times4$的转动矩阵，也就是说这是一个自正交的行列式为$1$的矩阵。我们接下来建立这种对称性的性质从而让伦茨矢量作为一个运动常数，然后我们会发现这些性质就是我们期待的SO(4)的性质。
+
+我们的接下来的推导与 Schiff (1958), pp. 235 - 39。我们首先需要修改({\ref{4.1.19}})来构建一个厄米算符。首先，对于两个厄米算符$\bm A$和$\bm B$，很显然的看到$\bm {A\times B}^{\dagger} = -\bm{B\times A}$。因此，伦茨矢量的厄米形式应该是
+
+\begin{equation}
+\bm {M} = \frac{1}{2m}\left(\bm{p\times L - L\times p}\right) - \frac{Ze^2}{r}\bm{r}
+\end{equation}
+
+\noindent 可以发现$\bm M$和哈密顿量：
+
+\begin{equation}
+H = \frac{\bm{p}^2}{2m} - \frac{Ze^2}{r}
+\end{equation}
+
+\noindent 对易，即
+
+\begin{equation}
+\left[\bm{M}, H\right] = 0
+\end{equation}
+
+\noindent 所以$\bm M$是一个（量子力学下的）运动常数。其它常用的与之相关的结论可以写作
+
+\begin{equation}
+\bm{L \cdot M} = 0 = \bm{M \cdot L}
+\end{equation}
+
+\begin{equation}
+\text{和}\ \ \ \ \bm{M}^2 = \frac{2}{m}H\left(\bm{L}^2 + \hbar^2\right) + Z^2e^4
+\end{equation}
+
+为了找到这个运动常数对应的对称性，一个有指导意义的做法是回顾一下代数里面学到的对称性的生成元。我们已知了一些代数形式：
+
+\begin{equation}  \label{4.1.25}
+\left[L_i, L_j\right] = i\hbar \epsilon_{ijk}L_k
+\end{equation}
+
+\noindent 我们曾在(\ref{3.6.2})中写过这种表达，要对重复的指标(这里就是$k$)进行求和\footnote[5]{译注：为了防止没看懂(真的会有人没看懂吗？)，等式右边实际上相当于\\ \[\sum_k i\hbar \epsilon_{ijk}L_k\]}。我们同样可以得到
+
+\begin{equation}  \label{4.1.26}
+\left[M_i, L_j\right] = i\hbar \epsilon_{ijk}M_k
+\end{equation}
+
+\noindent 这实际上把$\bm M$树立成一个和(\ref{3.11.8})一样的矢量算符。而最后，我们还可以得到
+
+\begin{equation}  \label{4.1.27}
+\left[M_i, M_j\right] = -i]hbar \epsilon_{ijk}\frac{2}{m}HL_k
+\end{equation}
+
+为了明确一下，(\ref{4.1.25})，(\ref{4.1.26})和(\ref{4.1.27})并不构成闭合的代数对易关系，由于(\ref{4.1.27})中出现了$H$，所以这使得把这些算符作为连续对称性系统的生成元不现实。但是，我们可以考虑一个特殊的束缚体系。在这个情况下，向量空间被减小到只针对那些$H$的本征态，且本征值$E < 0$。这样的话我们就能在(\ref{4.1.27})中用$E$替代$H$了，这样就有了闭合的对易关系。为了形式上看的更对称，引入一个正比于$\bm M$的矢量算符
+
+\begin{equation}
+\bm N \equiv \left(-\frac{m}{2E}\right)^{1/2}\bm M
+\end{equation}
+
+\noindent 所以，我们拥有如下闭合的代数对易关系：
+
+\begin{subequations}  \label{4.1.29}
+\begin{align}
+\left[L_i, L_j\right] = i\hbar \epsilon_{ijk}L_k \\
+\left[L_i, L_j\right] = i\hbar \epsilon_{ijk}L_k \\
+\left[L_i, L_j\right] = i\hbar \epsilon_{ijk}L_k
+\end{align}
+\end{subequations}
+
+所以我们在(\ref{4.1.29})中利用$\bm{L, N}$生成的对称性是什么呢？尽管很不显然，但这个问题的答案是“四维空间的旋转”。首先的线索就是生成元的数量，6 个，每一个都相当于对应一些轴的转动。把转动想象为一些把两个轴进行“混合”的操作，相应的，在一定维度的空间中生成元的数量应该是$n(n-1)/2$。由此，而2维的转动就有1个生成元，3维的转动就有3个生成元，4维的转动就有6个生成元。
+
+想要看出(\ref{4.1.29})实际上是一个恰当的四维转动的代数结构就更困难了，但是我们换一个角度考虑。在三维空间中，轨道角动量算符({\ref{3.6.1})生成了转动操作。我们从(\ref{3.6.6})中看的更清楚，对于$\left|\alpha\right\rangle$的一个绕着$z$轴的无穷小转动可以用$\left|x, y, z\right\rangle$来表示。
+
+\subsection{分立对称性，宇称，或空间反演}
+\subsection{晶格平移的分立对称性}
+\subsection{时间反演的分立对称性}
+
+\end{document}

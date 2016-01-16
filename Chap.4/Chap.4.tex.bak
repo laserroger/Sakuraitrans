@@ -1,0 +1,568 @@
+﻿\documentclass[UTF8,twoside]{ctexart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{bibentry}
+\usepackage{multirow}
+\usepackage[CJKbookmarks=true]{hyperref}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usepackage{bm}
+
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{equation}{subsection}
+\makeatother % `@' is restored as 'non-letter'
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{figure}{section}
+\makeatother % `@' is restored as 'non-letter'
+\renewcommand\theequation{\oldstylenums{\thesubsection}%
+.\oldstylenums{\arabic{equation}}}
+\renewcommand\thefigure{\oldstylenums{\thesection}%
+.\oldstylenums{\arabic{figure}}}
+
+\DeclareMathOperator{\res}{Res}
+
+\begin{document}
+\setcounter{section}{3}
+\title{现代量子力学}
+\author{Laserdog}
+
+\maketitle
+\thispagestyle{empty}
+
+\cleardoublepage
+\pdfbookmark[1]{目录}{anchor}
+\tableofcontents
+\clearpage
+\section{量子力学中的对称性}
+
+\noindent 考虑到我们已经详尽的学习了转动理论，我们现在显然处于急需要讨论更一般的关于“对称性”，“简并”，和“守恒律”的内容。我们故意的推迟到现在才讲如此重要的一个话题是因为我们终于可以用我们在第三章中学到的转动对称性的知识作为一个很好的例子。
+
+\subsection{对称性，守恒律，简并}
+
+
+\noindent \\
+
+\noindent \fbox{%
+  \parbox{\textwidth}{%
+    \begin{centering}
+      {\textbf{本节框架}}\\
+      本节通过对讲点理学里面的对称性与守恒律的关系开始引入对称性的作用，从而逐步引入量子力学里面的对称性，介绍对称算符的概念并讲了它的性质，同时结合了上一章，以转动能级的简并为例子引入了简并对应的对称性(具体内容会在第5章说明)。接下来讲了库伦势(或推广至一次反比势能)的SO(4)对称性，引入了新情况的生成元和4维的转动，从而体现了整个系统的良好的性质。
+    \end{centering}
+  }%
+}  \\
+
+\
+
+
+\noindent {\textbf{经典物理中的对称性}}
+
+\noindent 我们从对经典物理中的对称性和守恒律的概念做一个基本的回顾。在拉格朗日体系下的量子力学，我们先看拉格朗日量$L$：这是一个有关广义坐标$q_i$，和相应的广义速度$\dot{q}_i$的函数。如果$L$在如下置换中保持不变：
+
+\begin{equation} \label{4.1.1}
+q_i\rightarrow q_i + \delta q_i
+\end{equation}
+
+\noindent 那么我们就必须有
+
+\begin{equation}
+\frac{\partial{L}}{\partial{q_i}} = 0
+\end{equation}
+
+\noindent 接下来，根据拉格朗日方程，$d/dt(\partial L/\partial \dot{q}_i) - \partial L /\partial q_i = 0$，有
+
+\begin{equation}
+\frac{dp_i}{dt} = 0
+\end{equation}
+
+\noindent 其中正则动量定义为
+
+\begin{equation}
+p_i = \frac{\partial L}{\partial \dot{q}_i}
+\end{equation}
+
+\noindent 如果拉格朗日量$L$在({\ref{4.1.1}})中的变换下保持不变，那么相应的$q_i$所对应的正则动量，就成为了守恒量。
+
+类似的，在哈密顿力学体系下，哈密顿量$H$看为是广义坐标$q_i$和广义动量$p_i$的函数，我们有
+
+\begin{equation}
+\frac{dp_i}{dt} = 0
+\end{equation}
+
+\noindent 每当
+
+\begin{equation}
+\frac{\partial H}{\partial q_i} = 0
+\end{equation}
+
+\noindent 所以，如果哈密顿量并不显含$q_i$的话，换句话说$H$具有在$q_i \rightarrow q_i + dq_i$的对称性的话，我们就有了守恒的量。\\
+
+\noindent {\textbf{量子力学中的对称性}}
+
+\noindent 在量子力学中我们已经学习了一个{\textbf{Unitary 算符}}\footnote[1]{如同上几章强调过的，我打算以后都写成Unitary 算符来代替酉算符，因为这个翻译太蠢了}，比如说$\mathscr{G}$，如何与平移、转动算符建立关系。习惯来讲会把$\mathscr{G}$叫成一个{\textbf{对称算符}}不管它是否是一个物理体系自身展现的对称性所对应的算符。更进一步，我们学过了对称算符在无穷小变化下与identity\footnote[2]{就是不变换，保持自身的单位算符}的差异，我们可以写出
+
+\begin{equation}
+\mathscr{G} = 1 - \frac{i\epsilon}{\hbar}G
+\end{equation}
+
+\noindent 其中 $G$ 是这个问题中对称性算符的厄米生成元。我们现在假定$H$在$\mathscr{G}$下保持不变，那么就有
+
+\begin{equation}
+\mathscr{G}^{\dagger} H \mathscr{G} = H
+\end{equation}
+
+\noindent 这就相当于
+
+\begin{equation} \label{4.1.9}
+\left[G, H\right] = 0
+\end{equation}
+
+\noindent 根据海森堡的动力演化方程，我们有
+
+\begin{equation} \label{4.1.10}
+\frac{dG}{dt} = 0
+\end{equation}
+
+\noindent 因此，$G$是一个动力学常数。比方说，哈密顿量$H$在平移下保持不变，那么动量相应的就是一个动力学常数。
+
+当$G$和$H$对易的时候，一个很有意义的做法是，从$G$的本征矢的角度来简单的回顾一下({\ref{4.1.9}})与$G$守恒之间的关系。假定在$t_0$时间，系统处于$G$ 的本征态，那么这个态之后的演化可以有时间演化算符来描述：
+
+\begin{equation}
+\left|g', t_0; t\right\rangle = U\left(t, t_0\right)\left|g'\right\rangle
+\end{equation}
+
+\noindent 这同样还是$G$的具有相同本征值$g'$的本征态。换句话说，一旦一个态矢是$G$的本征态，他就将会一直是$G$ 的本征态且具有相同的本征值。当然，这个证明在考虑到({\ref{4.1.9}})和({\ref{4.1.10}})同样表明了$G$与时间演化算符对易，即
+
+\begin{equation}
+G\left[U\left(t, t_0\right)\left|g'\right\rangle\right] = U\left(t, t_0\right)G\left|g'\right\rangle = g' \left[U\left(t, t_0\right)\left|g'\right\rangle\right]
+\end{equation}
+\\
+
+\noindent {\textbf{简并}}
+
+\noindent 我们现在来看看有关简并的概念。尽管简并可以很大程度的在经典力学的程度内进行讨论 -- 比如，讨论闭合无进动轨道的开普勒问题 (Goldstein 2002)\footnote[3]{Goldstein, Herbert, et al. "Classical mechanics." American Journal of Physics 70.7 (2002): 782-783.} -- 这个概念在量子力学中其实起着更重要的左右。我们假定下列关系
+
+\begin{equation}
+\left[H, \mathscr{G}\right] = 0
+\end{equation}
+
+\noindent 对于一些特定的对称算符，在能量$E_n$的本征基矢$\left|n\right\rangle$下成立。
+
+\noindent 那么，$\mathscr{G}\left|n\right\rangle$同样也是能量本征态且具有相同的能量，因为
+
+\begin{equation}  \label{4.1.14}
+H\left(\mathscr{G}\left|n\right\rangle\right) = \mathscr{G}H\left|n\right\rangle = E_n \left(\mathscr{G}\left|n\right\rangle\right)
+\end{equation}
+
+\noindent 现在假定$\left|n\right\rangle$和$\mathscr{G}\left|n\right\rangle$表示不同的态。那么，这两个态具有相同的能量 -- 这就是说它们简并。通常来说这类$\mathscr{G}$由连续的参数来标记，比如说$\lambda$，表面对于所有的态，$\mathscr{G}\left(\lambda\right)\left|n\right\rangle$ 都具有相同的能量。
+
+我们现在特别的来考虑转动，假定哈密顿量是转动不变的，我们有
+
+\begin{equation}
+\left[\mathcal{D}\left(R\right), H\right] = 0
+\end{equation}
+
+\noindent 这立马就表明了
+
+\begin{equation}
+\left[{\textbf{J}}, H\right] = 0,\ \ \ \left[{\textbf{J}}^2, H\right] = 0
+\end{equation}
+
+\noindent 我们于是就建立了$H,\  \textbf{J}^2,\  \textbf{J}_{z}$的共同本征态，用$\left|n; j, m\right\rangle$来标记。那么我们就得到了所有的
+
+\begin{equation}
+\mathcal{D}\left(R\right)\left|n; j, m\right\rangle
+\end{equation}
+
+\noindent 拥有同样的能量。我们在第3章中看到，在转动变换下不同的$m$值被“混在了一起”。总的来说，$\mathcal{D}\left(R\right)\left|n; j, m\right\rangle$ 是一个关于$2j + 1$个线性无关的态的线性组合。准确地讲就是
+
+\begin{equation}
+\mathcal{D}\left(R\right)\left|n; j, m\right\rangle = \sum_{m'} \left(R\right)\left|n; j, m‘\right\rangle \mathcal{D}^{\left(j\right)}_{m'm}\left(R\right)
+\end{equation}
+
+\noindent 然后，通过改变那个表示转动情况的连续的参数，对应的$\mathcal{D}\left(R\right)$，我们可以得到不同的关于$\left|n; j, m‘\right\rangle$ 的线性组合。如果对于任意一个$\mathcal{D}\left(R\right)$，所有的具有$\mathcal{D}\left(R\right)\left|n; j, m\right\rangle$ 形式的态都有相同的能量，那我们就可以说所有的具有不同的$m$的$\left|n; j, m\right\rangle$都具有相同的能量。所以这里的简并是$(2j+1)$重的，即是$m$所有可能选取值的个数。这一点同样可以通过如下方式直观的得出：不同的$m$的态可以利用升降算符$J_{\pm}$得到，而升降算符是和$H$对易的，所以$\left|n; j, m\right\rangle$具有相同的能量。
+
+作为一个对对称性的应用，我们考虑一个原子中的电子，它的势能可以写作$V(r)+V_{LS}\bm{L \cdot S}$。因为$r$和$\bm{L\cdot S}$都是旋转不变的，我们期待每个原子能级有一个$(2j+1)$重的简并。另一方面，假定这里有外加电场或者磁场，比如$z$方向。旋转对称性如今显得被破坏了，所以不太可能有$(2j+1)$重简并了，而且不同的$m$对应的态也不太可能有相同的能量。我们将在第5章来检验这种分裂是如何产生的。\\
+
+\noindent {\textbf{库伦势中的SO(4)对称性}}
+
+\noindent 一个非常合适的关于量子力学的连续对称性的例子就是氢原子库伦势问题。我们在第3章第7节层讨论过这个问题，在那里我们发现在式({\ref{3.7.53}})中的能量本征值极强的表现了({\ref{3.7.56}})中的简并。如果体系的简并是偶然的那将会更引人注目，但是实际上，这是由于$1/r$势的束缚态所有的附加对称性。
+
+经典问题中，这种势的轨道，即开普勒问题，在量子力学之前就已经被仔细的研究过了。至于椭圆轨道是闭合的意味着应该有一些（矢量）运动常数来维持椭圆轨道的主轴方向。我们知道，即使是相比于$1/r$的一个小偏移都会导致主轴的进动，所以我们期望找到一个$1/r$势独特的运动常数。
+
+经典的来说，这个常数是
+
+\begin{equation}  \label{4.1.19}
+\bm{M} = \frac{\bm{p\times L}}{m} - \frac{Ze^2}{r}\bm r
+\end{equation}
+
+\noindent 我们使用了在第3章第7节中使用过了的记号。这个常数矢量实际上被称为“伦茨矢量”，或者“伦格-伦茨矢量”\footnote[4]{$Runge-Lenz\  vector$}。 不想经典力学那样处理它，我们在量子框架下的对称性的手段来处理这个运动常数。
+
+这个新的对称性，我们称之为SO(4)，与我们在第3章第3节学到的SO(3)是完全类似的。这就是说，SO(4)是一个$4\times4$ 的转动矩阵，也就是说这是一个自正交的行列式为$1$的矩阵。我们接下来建立这种对称性的性质从而让伦茨矢量作为一个运动常数，然后我们会发现这些性质就是我们期待的SO(4) 的性质。
+
+我们的接下来的推导与 Schiff (1958), pp. 235 - 39。我们首先需要修改({\ref{4.1.19}})来构建一个厄米算符。首先，对于两个厄米算符$\bm A$和$\bm B$，很显然的看到$\bm {A\times B}^{\dagger} = -\bm{B\times A}$。因此，伦茨矢量的厄米形式应该是
+
+\begin{equation}
+\bm {M} = \frac{1}{2m}\left(\bm{p\times L - L\times p}\right) - \frac{Ze^2}{r}\bm{r}
+\end{equation}
+
+\noindent 可以发现$\bm M$和哈密顿量：
+
+\begin{equation}
+H = \frac{\bm{p}^2}{2m} - \frac{Ze^2}{r}
+\end{equation}
+
+\noindent 对易，即
+
+\begin{equation}
+\left[\bm{M}, H\right] = 0
+\end{equation}
+
+\noindent 所以$\bm M$是一个（量子力学下的）运动常数。其它常用的与之相关的结论可以写作
+
+\begin{equation}  \label{4.1.23}
+\bm{L \cdot M} = 0 = \bm{M \cdot L}
+\end{equation}
+
+\begin{equation}  \label{4.1.24}
+\text{和}\ \ \ \ \bm{M}^2 = \frac{2}{m}H\left(\bm{L}^2 + \hbar^2\right) + Z^2e^4
+\end{equation}
+
+为了找到这个运动常数对应的对称性，一个有指导意义的做法是回顾一下代数里面学到的对称性的生成元。我们已知了一些代数形式：
+
+\begin{equation}  \label{4.1.25}
+\left[L_i, L_j\right] = i\hbar \epsilon_{ijk}L_k
+\end{equation}
+
+\noindent 我们曾在(\ref{3.6.2})中写过这种表达，要对重复的指标(这里就是$k$)进行求和\footnote[5]{译注：为了防止没看懂(真的会有人没看懂吗？)，等式右边实际上相当于\\ \[\sum_k i\hbar \epsilon_{ijk}L_k\]}。我们同样可以得到
+
+\begin{equation}  \label{4.1.26}
+\left[M_i, L_j\right] = i\hbar \epsilon_{ijk}M_k
+\end{equation}
+
+\noindent 这实际上把$\bm M$树立成一个和(\ref{3.11.8}) 一样的矢量算符。而最后，我们还可以得到
+
+\begin{equation}  \label{4.1.27}
+\left[M_i, M_j\right] = -i\hbar \epsilon_{ijk}\frac{2}{m}HL_k
+\end{equation}
+
+为了明确一下，(\ref{4.1.25})，(\ref{4.1.26})和(\ref{4.1.27})并不构成闭合的代数对易关系，由于(\ref{4.1.27})中出现了$H$，所以这使得把这些算符作为连续对称性系统的生成元不现实。但是，我们可以考虑一个特殊的束缚体系。在这个情况下，向量空间被减小到只针对那些$H$的本征态，且本征值$E < 0$。这样的话我们就能在(\ref{4.1.27})中用$E$替代$H$了，这样就有了闭合的对易关系。为了形式上看的更对称，引入一个正比于$\bm M$ 的矢量算符
+
+\begin{equation}  \label{4.1.28}
+\bm N \equiv \left(-\frac{m}{2E}\right)^{1/2}\bm M
+\end{equation}
+
+\noindent 所以，我们拥有如下闭合的代数对易关系：
+
+\begin{subequations}  \label{4.1.29}
+\begin{align}
+\left[L_i, L_j\right] = i\hbar \epsilon_{ijk}L_k \\
+\left[L_i, L_j\right] = i\hbar \epsilon_{ijk}L_k \\
+\left[L_i, L_j\right] = i\hbar \epsilon_{ijk}L_k
+\end{align}
+\end{subequations}
+
+所以我们在(\ref{4.1.29})中利用$\bm{L, N}$生成的对称性是什么呢？尽管很不显然，但这个问题的答案是“四维空间的旋转”。首先的线索就是生成元的数量，6 个，每一个都相当于对应一些轴的转动。把转动想象为一些把两个轴进行“混合”的操作，相应的，在一定维度的空间中生成元的数量应该是$n(n-1)/2$。 由此，而2维的转动就有1个生成元，3维的转动就有3个生成元，4维的转动就有6个生成元。
+
+想要看出(\ref{4.1.29})实际上是一个恰当的四维转动的代数结构就更困难了，但是我们换一个角度考虑。在三维空间中，轨道角动量算符({\ref{3.6.1}})生成了转动操作。我们从(\ref{3.6.6})中看的更清楚，对于$\left|\alpha\right\rangle$的一个绕着$z$轴的无穷小转动可以用$\left|x, y, z\right\rangle$ 来表示。之所以能这样，是因为动量算符可以看做空间评议的一个生成元。事实上，如$L_z = xp_y - yp_x$这样坐标和动量的组合形式相当于把$x, y$两个轴进行了“混合”，就像我们希望的绕$z$轴的转动生成元所做的那样。
+
+为了推广这一性质到四维空间，我们首先用$(x_1, x_2, x_3),\ (p_1, p_2, p_3)$来替代$(x, y, z),\ (p_x, p_y, p_z)$。从而，我们就需要重新写生成元，就像$L_3 = \tilde{L}_{12} = x_1p_2 - x_2p_1,\ \ L_1 = \tilde{L}_{23},\ \ \text{和}\ L_2 = \tilde{L}_{31}$。 如果我们接下来开发一个新的空间坐标$x_4$和相应的共轭动量$p_4$(之间满足正常的坐标-动量对易关系)，我们可以定义：
+
+\begin{subequations}  \label{4.1.30}
+\begin{align}
+\tilde{L}_{14} = x_1p_4 - x_4p_1 \equiv N_1\\
+\tilde{L}_{24} = x_2p_4 - x_4p_2 \equiv N_2\\
+\tilde{L}_{34} = x_3p_4 - x_4p_3 \equiv N_3
+\end{align}
+\end{subequations}
+
+\noindent 这样一来很容易就看出$N_1$符合(\ref{4.1.29}) 规定的代数关系，例如：
+
+\begin{equation}
+\begin{split}
+\left[N_1, L_2\right] &= \left[x_1p_4 - x_4p_1, x_3p_1 - x_1p_3\right]\\
+&=p_4\left[x_1, p_1\right]x_3 + x_4\left[p_1, x_1\right]p_3\\
+&=i\hbar\left(x_3p_4 - x_4p_3\right) = i\hbar N_3\\
+\end{split}
+\end{equation}
+
+\noindent 换句话说，这就是四维空间的代数对易形式。不过在继续研究之前，我们先稍微看看(\ref{4.1.14})指出的库伦势的简并：
+
+定义算符
+
+\begin{align}
+\bm{I} \equiv \bm{(L + N)}/2  \\
+\bm{K} \equiv \bm{(L - N)}/2
+\end{align}
+
+\noindent 我们可以很简单的证明如下对易关系：
+
+\begin{subequations}  \label{4.1.34}
+\begin{align}
+\left[I_i, I_j\right] &= i\hbar\epsilon_{ijk}I_k\\
+\left[K_i, K_j\right] &= i\hbar\epsilon_{ijk}K_k\\
+\left[I_i, K_j\right] &= 0
+\end{align}
+\end{subequations}
+
+\noindent 因此，这些算符遵守各自独立的叫动量对易关系。同时，很显然的也有$\left[\bm{I}, H\right] = \left[\bm{K}, H\right] = 0$。因此，这些“角动量”们是守恒律，并且我们知道$\bm{I}^2, \text{和}\bm{K}^2$的本征值分别是$i(i+1)\hbar^2,\ k(k+1)\hbar^2$，其中$i, k = 0, \frac{1}{2}, 1, \frac{3}{2}, \cdots$
+
+根据(\ref{4.1.23})和(\ref{4.1.28})，$\bm{I^2 - K^2} = \bm{L \cdot N} = 0$，我们必须让$i = l$才行。而另一方面，算符
+
+\begin{equation}
+\bm{I^2 + K^2} = \frac{1}{2}\left(\bm{L^2 + N^2}\right) = \frac{1}{2}\left(\bm{L^2} - \frac{m}{2E}\bm{M^2}\right)
+\end{equation}
+
+\noindent 由此，结合(\ref{4.1.24})，得到
+
+\begin{equation}
+2k(k+1)\hbar^2 - \frac{1}{2}\left(-\hbar^2 - \frac{m}{2E}Z^2e^4\right)
+\end{equation}
+
+\noindent 解出$E$，我们有
+
+\begin{equation}
+E = -\frac{mZ^2e^4}{2\hbar^2}\frac{1}{(2k+1)^2}
+\end{equation}
+
+\noindent 这与(\ref{3.7.53})一致，只是把主量子数$n$改成了$2k+1$而已。我们现在看到，库伦势的“对称性”主要源于两个算符$\bm{I, K}$所表达的那种“转动”对称性。这个对称性的简并度是$(2i+1)(2k+1) = (2k+1)^2 = n^2$。这个(\ref{3.7.56})所得到的一样，只不过这回我们明确了这种简并并不是偶然而是有原因的。
+
+如果我们不去真的求解氢原子的薛定谔方程，那么我们刚才所解的这一系列东西实际上都没有意义。相反的，我们充分的利用了内部的对称性来得到更多相同的答案。这个解由泡利\footnote[6]{Pauli}最先给出。
+
+用节{\ref{S3.3}}中我们了解了一点的连续群理论的语言来说，我们看到(\ref{4.1.29})的代数对易关系与SO(4)群相联系。不仅如此，在(\ref{4.1.34})中重写的形式可以看出来这个可以被看做是两个独立的SU(2)群 -- 即SU(2)$\times$SU(2)群。尽管本书在这里的目的并不是做一个群论的概论说明，我们还是要更深入的讲一下一个$n$ 维空间的转动如何表示 -- SO(n)群。
+
+将节{\ref{S3.3}}进行一般化，考虑一个$n\times n$的正交矩阵\footnote[7]{不确定中文叫啥。。就是自己和自己的转置正交}$R$组成的群来表示$n$维的转动。它们可以用参数描述成这样：
+
+\begin{equation}
+R = \exp\left(i\sum_{q = 1}^{n(n - 1)/2}\phi^q \tau^q\right)
+\end{equation}
+
+\noindent 其中$\tau^q$是纯虚的，且是反对称的矩阵，即，$\left(\tau^q\right)^T = -\tau^q$\footnote[8]{竟然在试读的时候有人问我这个$\tau^q$上的$T$ 次方是啥。。我也是醉了，这是转置}，$\phi^q$是广义旋转角。反对称性质保证了$R$是正交矩阵，系数$i$表示了纯虚的$\tau^q$也能构成厄米矩阵。
+
+显然的，$\tau^q$与转动算符生成元密切相关。事实上，是它们的对易关系应该来模仿生成元们的对易关系。依照节{\ref{S3.1}}的做法，我们比较绕$p$轴且绕$q$ 轴的无穷小旋转的先后带来的差异，即
+
+\begin{equation} \label{4.1.39}
+\begin{split}
+\left(1+i\phi^p\tau^p\right)\left(1+i\phi^q\tau^q\right) - & \left(1+i\phi^q \tau^q \right) \left(1+i\phi^p\tau^p\right)\\
+&=-\phi^p\phi^q\left[\tau^p, \tau^q\right]\\
+&=1-\left(1+i\phi^p\phi^q\sum_r f_r^{pq}\tau^r\right)
+\end{split}
+\end{equation}
+
+\noindent (\ref{4.1.39})的最后一行说明了这个结果必然是绕两个轴转动生成元的二阶项的一些线性组合。$f_r^{pq}$叫做转动群的{\it{结构常数}}。它能给出对易关系：
+
+\begin{equation}
+\left[\tau^p, \tau^q\right] = i\sum_r f_r^{pq} \tau^r
+\end{equation}
+
+\noindent 接下来更深入的研究就是去确定这些结构常数，不过我们就把这个内容留给专门讲授群论的书吧。不过，对于三维问题，我们倒是不难给出$f_r^{pq} = \epsilon_{pqr}$，就像我们直觉感觉的那样。
+
+\subsection{分立对称性，宇称，或空间反演}
+
+
+\noindent \\
+
+\noindent \fbox{%
+  \parbox{\textwidth}{%
+    \begin{centering}
+      {\textbf{本节框架}}\\
+      啊啊啊
+    \end{centering}
+  }%
+}  \\
+
+\
+
+
+\noindent 到目前为止我们考虑了连续对称性算符 -- 即，可以通过施加连续的无限小的对称操作而得到的算符。不是所有的对称性操作在量子力学中都必然的有这种(连续的)形式的。这一节，我们来考虑三个可以称得上是“分立”而不是连续的对称性操作 -- 宇称、格点平移和时间反演。
+
+我们考虑的第一个操作就是宇称变换，或者说是空间反演。宇称变换如果作用在坐标系下，则使得右手系(RH)变成左手系(LH)，如图{\ref{Fig4.1}}。但是，我们本书中不考虑它作用在坐标系上，而是考虑它作用在一个态矢上。给定一个态$\left|\alpha\right\rangle$，考虑通过一个{\textbf{Unitary}}算符 -- 反演算符 -- $\pi$ 作用在它身上得到的它的空间反转态，如下：
+
+\begin{equation}
+\left|\alpha\right\rangle\ \rightarrow\ \pi\left|\alpha\right\rangle
+\end{equation}
+
+\noindent 我们需要这样的空间反转的情况下，$\bm x$的期望值应该取负。
+
+\begin{equation}
+\left\langle\alpha\right|\pi^{\dagger}\bm{x}\pi\left|\alpha\right\rangle =  -\left\langle\alpha\right|\bm{x}\left|\alpha\right\rangle
+\end{equation}
+
+\noindent 这是一个很合理的要求。如果有
+
+\begin{equation} \label{4.2.3}
+\pi^{\dagger}\bm{x}\pi = -\bm{x}
+\end{equation}
+
+\noindent 或者
+
+\begin{equation}
+\pi\bm{x} = -\bm{x}\pi
+\end{equation}
+
+\noindent 其中我们用到了$\pi$的{\textbf{Unitary}}性质。换句话说，$\pi$和$\bm{x}$必须反对易。
+
+动量算符的本征态是如何在宇称算符下变换的呢？我们说
+
+\begin{equation} \label{4.2.5}
+\pi\left|\bm {x'}\right\rangle = e^{i\delta}\left|-\bm{x'}\right\rangle
+\end{equation}
+
+\noindent 其中$e^{i\delta}$是一个相因子($\delta$是实数)。为了证明这点，我们考虑
+
+\begin{equation}
+\bm{x} \pi \left|\bm {x'}\right\rangle = - \pi \bm{x} \left|\bm {x'}\right\rangle = (-\bm{x'})\pi \left|\bm {x'}\right\rangle
+\end{equation}
+
+\noindent 这个方程说明$\pi \left|\bm {x'}\right\rangle$也是$\bm x$算符的本征函数，本征值为$-\bm {x'}$，所以它等于坐标本征值$\left|\bm {-x'}\right\rangle$乘以一个相位因子而已。
+
+通常取$e^{i\delta} = 1$。用这个代入(\ref{4.2.5})，我们有$\pi^2 \left|\bm {x'}\right\rangle = \left|\bm {x'}\right\rangle$。因此，我们有$\pi^2 = 1$，也就是说，如果我们对一个态作用两次$\pi$，它保持不变。我们从(\ref{4.2.5})中看出，$\pi$不仅是Unitary的，还是厄米的。
+
+
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 12.4cm]{./Sakurai/Fig_4.1.png}
+\caption{右手系(RH)和左手系(LH)}
+\label {Fig4.1}
+\end{centering}
+\end{figure}
+
+
+\begin{equation}
+\pi^{-1} = \pi^{\dagger} = \pi
+\end{equation}
+
+\noindent 它的本征值只能是$+1$和$-1$。
+
+那么，动量算符呢？动量算符$\bm p$有点像$md\bm{x}/dt$，所以我们很自然的想象它在宇称变化下显现奇性，就像$\bm x$一样。一个更令人接受的观点是把动量算符看做平移这种操作的生成元。注意到跟在宇称变换后进行的平移操作，等于进行{\emph{反向的}}平移跟一个进行宇称变换\footnote{这里的先后指的是算符的位置，事实上“后”的算符先作用在右矢上}，如图{\ref{Fig4.2}}所示。所以，
+
+\begin{equation}
+\pi \mathcal{T}(d\bm x') = \mathcal{T}(-d\bm x')\pi
+\end{equation}
+\begin{equation}
+\pi \left(1 - \frac{\bm p \cdot d\bm x'}{\hbar}\right) \pi^{\dagger} = \left(1 + \frac{\bm p \cdot d\bm x'}{\hbar}\right)
+\end{equation}
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width = 10cm]{./Sakurai/Fig_4.2.png}
+\caption{先后进行的平移与宇称变换}
+\label {Fig4.2}
+\end{centering}
+\end{figure}
+
+\noindent 其中有
+
+\begin{equation} \label{4.2.10}
+\left\{\pi, \bm p\right\} = 0\ \ \ \ \text{或者}\ \ \ \ \pi^{\dagger} \bm{p} \pi = -\bm p
+\end{equation}
+
+我们现在讨论$\bm J$在宇称变化下的行为。首先，轨道角动量显然有
+
+\begin{equation} \label{4.2.11}
+\left[\pi, \bm L\right] = 0
+\end{equation}
+
+\noindent 因为
+
+\begin{equation}
+\bm{L = x\times p}
+\end{equation}
+
+\noindent 而且$\bm x$和$\bm p$都是奇宇称的。但是，为了看到这个性质同样适用于自旋，我们最好使用$\bm J$是转动生成元这个事实。对$3\times 3$正交矩阵，我们有
+
+\begin{equation}
+R^{\text{宇称}}R^{\text{旋转}} = R^{\text{旋转}}R^{\text{宇称}}
+\end{equation}
+
+\noindent 其中很明显的，
+
+\begin{equation}
+R^{\text{宇称}} = \begin{pmatrix}-1 & &0 \\  &-1 & \\ 0 & &-1 \end{pmatrix}
+\end{equation}
+
+\noindent 这就是说，宇称变换和转动是对易的。在量子力学里，假定对应的算符是Unitary的是一件很自然的事情，所以
+
+\begin{equation} \label{4.2.15}
+\pi \mathcal{D}(R) = \mathcal{D}(R) \pi
+\end{equation}
+
+\noindent 其中$\mathcal{D}(R) = 1 - i \bm{J}\cdot \hat{\bm n} \epsilon/\hbar$。从(\ref{4.2.15})中可以看到，
+
+\begin{equation} \label{4.2.16}
+\left[\pi, \bm{J}\right] = 0\ \ \ \ \text{或者} \pi^{\dagger}\bm{J}\pi = \bm{J}
+\end{equation}
+
+\noindent 这个，与(\ref{4.2.11})一起表明了自旋算符$\bm S$(构成了总角动量算符$\bm {J = L + S}$)与轨道角动量$\bm L$一样变换。
+
+在旋转下，$\bm {x, J}$的变换方式一样，所以他们都是矢量，或者称为秩为$1$的球张量\footnote{关于球张量，可以参考节{\ref{S3.6}}的内容。}。但是，$\bm x \text{或}\bm p$在宇称变化下是奇性的[参见(\ref{4.2.3})，(\ref{4.2.10})]，而角动量$\bm J$是偶性的[参看(\ref{4.2.16})]。我们把宇称变换下显奇性的叫做{\textbf{极矢量}}，而把显偶性的叫做{\textbf{轴矢量}}或{\textbf{隗矢量}}。
+
+我们现在考虑一个形如$\bm{S}\cdot\bm{x}$的算符。在旋转下，它们表现的像正常的标量一样，比如$\bm{S}\cdot\bm{L},\, \bm{x}\cdot\bm{P}$。但是在空间反演对称的情况下，我们有：
+
+\begin{equation}
+\pi^{-1} \bm{S}\cdot\bm{x}\pi = -\bm{S}\cdot\bm{x}
+\end{equation}
+
+\noindent 但是对于一般的标量满足
+
+\begin{equation}
+\pi^{-1} \bm{S}\cdot\bm{L}\pi = \bm{S}\cdot\bm{L}
+\end{equation}
+
+这样的关系。算符$\bm{S}\cdot\bm{x}$就是一个隗矢量的例子。
+
+\ 
+
+\noindent \textbf{从宇称看波函数}
+
+\noindent 我们现在看一下波函数的宇称性质。首先，假定$\psi$是一个没有自旋，态矢量为$|\alpha\rangle$的粒子：
+
+\begin{equation}
+\psi(\bm{x}') = \langle\bm{x}'|\alpha\rangle
+\end{equation}
+
+\noindent 空间反演下的态，用$\pi|\alpha\rangle$来表示，就是
+
+\begin{equation}
+\langle\bm{x}'|\pi|\alpha\rangle = \langle\bm{x}'|\alpha\rangle = \psi(-\bm{x}')
+\end{equation}
+
+假定$|\alpha\rangle$是宇称算符的本征态。我们知道，宇称算符的本征值必须是$\pm 1$，所以，
+
+\begin{equation}
+\pi|\alpha\rangle = \pm|\alpha\rangle
+\end{equation}
+
+\noindent 我们可以看到，相应的波函数是
+
+\begin{equation}
+\langle\bm{x}'|\pi|\alpha\rangle = \pm \langle\bm{x'}|\alpha\rangle
+\end{equation}
+
+\noindent 但注意我们同样有：
+
+\begin{equation}
+\langle\bm{x}'|\pi|\alpha\rangle = \langle-\bm{x}'|\alpha\rangle
+\end{equation}
+
+\noindent 所以态$|\alpha\rangle$是偶宇称或奇宇称，得看波函数是否满足：
+
+\begin{equation}
+\psi(-\bm{x}') = \pm\psi(\bm{x}')
+\begin{cases}
+\text{even parity}\\
+\text{odd parity}
+\end{cases}
+\end{equation}
+
+并不是所有的物理上感兴趣的波函数都有明确的
+
+
+\subsection{晶格平移的分立对称性}
+\subsection{时间反演的分立对称性}
+
+\end{document}
