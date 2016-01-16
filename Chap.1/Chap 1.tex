@@ -589,13 +589,28 @@ Hermitian算符$A$的本征值是实的；它的对应不同本征值的本征�
 \end{theo}
 
 \noindent {\emph{证明}}. 首先，我们记得
-\be
+\be\label{1.3.1}
 A|a'\rangle = a'|a'\rangle
 \ee
 因为$A$是Hermitian的，我们同样有
-\be
+\be\label{1.3.2}
 \langle a''|A = a''^*\langle a''|
 \ee
+其中$a',a'',\cdots$是$A$的本征值。如果我们在\eqref{1.3.1}的两边同时在左边作用一个$\langle a''|$上去，并且在\eqref{1.3.2}两边右边同时作用一个$|a'\rangle$上去，并且相减，我们有
+\be\label{1.3.3}
+(a'-a''^*)\langle a''|a'\rangle = 0
+\ee
+而这里$a'$和$a''$可以是相同或者不同的。首先我们把它们取成相同的，我们得到了对本征值为实数的要求（也就是定理的前半部分）
+\be
+a' = a'^*
+\ee
+其中我们使用了条件：$|a'\rangle$不是一个空态矢。我们现在假定$a'$和$a''$不在一致。利用我们刚刚证明的定理的前半部分，在\eqref{1.3.3}中的$a'-a''^*=a'-a''$，根据我们的假设，它并不得$0$。因此内积必须得$0$：
+\be
+\langle a''|a'\rangle = 0,\quad (a' \neq a'')
+\ee
+保证了正交性（定理的第二部分）。\ \\
+
+我们
 
 
 \subsection{测量，可观测量和不确定关系}
