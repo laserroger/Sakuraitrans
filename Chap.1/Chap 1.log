@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  19 JAN 2016 10:55
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  20 JAN 2016 00:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2060,13 +2060,6 @@ File: ./Sakurai/Fig_1.1.png Graphic file (type QTm)
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-
-LaTeX Font Warning: Command \boldmath invalid in math mode on input line 106.
-
-
-LaTeX Font Warning: Command \mathversion invalid in math mode on input line 106
-.
-
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -2219,33 +2212,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--136
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-File: ./Sakurai/Fig_1.3.png Graphic file (type QTm)
-<use  "./Sakurai/Fig_1.3.png" >
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
 [4]
+File: ./Sakurai/Fig_1.3.png Graphic file (type QTm)
+ <use  "./Sakurai/Fig_1.3.png" >
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -2295,8 +2264,32 @@ File: ./Sakurai/Fig_1.3.png Graphic file (type QTm)
 * selected by fontspec.
 *************************************************
 [5]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
 File: ./Sakurai/Fig_1.4.png Graphic file (type QTm)
- <use  "./Sakurai/Fig_1.4.png" >
+<use  "./Sakurai/Fig_1.4.png" >
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -2335,7 +2328,79 @@ File: ./Sakurai/Fig_1.5.png Graphic file (type QTm)
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-[6]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+[6] [7]
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -2432,163 +2497,6 @@ File: ./Sakurai/Fig_1.5.png Graphic file (type QTm)
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-[7]
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -2758,8 +2666,54 @@ File: ./Sakurai/Fig_1.5.png Graphic file (type QTm)
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-File: ./Sakurai/Fig_1.6.png Graphic file (type QTm)
-<use  "./Sakurai/Fig_1.6.png" >
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -2797,6 +2751,8 @@ File: ./Sakurai/Fig_1.6.png Graphic file (type QTm)
 * selected by fontspec.
 *************************************************
 [9]
+File: ./Sakurai/Fig_1.6.png Graphic file (type QTm)
+ <use  "./Sakurai/Fig_1.6.png" >
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -2833,79 +2789,10 @@ File: ./Sakurai/Fig_1.6.png Graphic file (type QTm)
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-[10]
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -3256,78 +3143,6 @@ File: ./Sakurai/Fig_1.6.png Graphic file (type QTm)
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
 [13]
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
@@ -3461,21 +3276,6 @@ File: ./Sakurai/Fig_1.6.png Graphic file (type QTm)
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-
-LaTeX Warning: Reference `Ch4' on page 14 undefined on input line 462.
-
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -3669,6 +3469,45 @@ LaTeX Warning: Reference `Ch4' on page 14 undefined on input line 462.
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
+
+LaTeX Warning: Reference `Ch4' on page 15 undefined on input line 462.
+
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -3730,6 +3569,42 @@ LaTeX Warning: Reference `Ch4' on page 14 undefined on input line 462.
 * selected by fontspec.
 *************************************************
 [15]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -3983,31 +3858,151 @@ LaTeX Warning: Reference `Ch4' on page 14 undefined on input line 462.
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
 [17]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -4025,6 +4020,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 611--613
 
  []
 
+[18]
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -4121,7 +4117,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 619--621
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-[18]
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -4134,6 +4129,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 619--621
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
+[19]
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -4319,163 +4315,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 671--673
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-[19]
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
-*************************************************
-* fontspec warning: "addfontfeatures-ignored"
-* 
-* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
-* selected by fontspec.
-*************************************************
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -4489,6 +4328,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 671--673
 * selected by fontspec.
 *************************************************
 [20]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
@@ -4730,12 +4617,433 @@ Underfull \hbox (badness 10000) in paragraph at lines 671--673
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-[22] [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 816.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 816.
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+[22]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+[23]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+
+LaTeX Warning: Command \' invalid in math mode on input line 833.
+
+Missing character: There is no ́ in font cmmi10!
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+[24]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+File: ./Sakurai/Fig_1.7.png Graphic file (type QTm)
+<use  "./Sakurai/Fig_1.7.png" >
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+
+Underfull \vbox (badness 1014) has occurred while \output is active []
+
+ [25]
+[26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 868.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 868.
  (./Chap 1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 816.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 816.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 868.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 868.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -4744,17 +5052,14 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 37305 strings out of 493706
- 754032 string characters out of 6145769
- 752367 words of memory out of 5000000
- 40116 multiletter control sequences out of 15000+600000
+ 37311 strings out of 493706
+ 754100 string characters out of 6145769
+ 752522 words of memory out of 5000000
+ 40121 multiletter control sequences out of 15000+600000
  20898 words of font info for 119 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 63i,22n,74p,10414b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,27n,74p,10414b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Chap 1.pdf (26 pages).
+Output written on Chap 1.pdf (29 pages).
