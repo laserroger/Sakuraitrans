@@ -1,0 +1,67 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%times,
+
+\documentclass[UTF8,twoside]{ctexart}
+
+%\documentclass[UTF8, twoside]{article}
+%\usepackage[slantfont,boldfont]{xeCJK}
+%\setCJKmainfont{SimSun}
+
+\usepackage{geometry}
+\geometry{letterpaper}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{bibentry}
+\usepackage{multirow}
+\usepackage[CJKbookmarks=true, colorlinks]{hyperref}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\newtheorem{theo}{定理}[section]
+
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{equation}{subsection}
+\makeatother % `@' is restored as 'non-letter'
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{footnote}{page}
+\makeatother % `@' is restored as 'non-letter'
+\makeatletter % `@' now normal 'letter'
+\@addtoreset{figure}{section}
+\makeatother % `@' is restored as 'non-letter'
+\renewcommand\theequation{\oldstylenums{\thesubsection}%
+.\oldstylenums{\arabic{equation}}}
+\renewcommand\thefigure{\oldstylenums{\thesection}%
+.\oldstylenums{\arabic{figure}}}
+\renewcommand\thefootnote{\oldstylenums{\arabic{footnote}}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\newcommand{\figref}[1]{图\ref{#1}}
+\DeclareMathOperator{\res}{Res}
+
+\begin{document}
+\title{现代量子力学}
+\author{Author: J. J. Sakurai\\
+Translator: Laserdog, \it et al. }
+\date{}
+
+\maketitle
+\thispagestyle{empty}
+
+\cleardoublepage
+\pdfbookmark[1]{目录}{anchor}
+\tableofcontents
+\clearpage
+\setcounter{page}{1}
+\input{Chap1}
+\input{Chap2}
+\input{Chap3}
+\input{Chap4}
+\input{Chap5}
+\input{Chap6}
+
+
+\end{document}
