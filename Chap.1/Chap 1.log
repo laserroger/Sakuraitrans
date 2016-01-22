@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.1.22)  22 JAN 2016 08:49
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.1.22)  22 JAN 2016 09:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4820,6 +4820,18 @@ File: ./Sakurai/Fig_1.7.png Graphic file (type QTm)
 * selected by fontspec.
 *************************************************
 [25]
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
 *************************************************
 * fontspec warning: "addfontfeatures-ignored"
 * 
