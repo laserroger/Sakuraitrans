@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.1.22)  22 JAN 2016 01:54
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.1.22)  22 JAN 2016 08:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1674,98 +1674,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--80
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!
-! fontspec error: "font-not-found"
-! 
-! The font "[SIMFANG.TTF]" cannot be found.
-! 
-! See the fontspec documentation for further information.
-! 
-! For immediate help type H <return>.
-!...............................................  
-                                                  
-l.84 ..._bad_cigar_helped_atomic_phys_PT2003.pdf}}
-                                                  
-|'''''''''''''''''''''''''''''''''''''''''''''''
-| A font might not be found for many reasons.
-| Check the spelling, where the font is installed etc. etc.
-| 
-| When in doubt, ask someone for help!
-|...............................................
-
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font '[SIMFANG.TTF]' does not contain script 'CJK'.
-*************************************************
-\g_fontspec_family_[SIMFANG.TTF]_int=\count183
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!
-! fontspec error: "font-not-found"
-! 
-! The font "[SIMFANG.TTF]" cannot be found.
-! 
-! See the fontspec documentation for further information.
-! 
-! For immediate help type H <return>.
-!...............................................  
-                                                  
-l.84 ..._bad_cigar_helped_atomic_phys_PT2003.pdf}}
-                                                  
-|'''''''''''''''''''''''''''''''''''''''''''''''
-| A font might not be found for many reasons.
-| Check the spelling, where the font is installed etc. etc.
-| 
-| When in doubt, ask someone for help!
-|...............................................
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!
-! fontspec error: "font-not-found"
-! 
-! The font "[SIMFANG.TTF]" cannot be found.
-! 
-! See the fontspec documentation for further information.
-! 
-! For immediate help type H <return>.
-!...............................................  
-                                                  
-l.84 ..._bad_cigar_helped_atomic_phys_PT2003.pdf}}
-                                                  
-|'''''''''''''''''''''''''''''''''''''''''''''''
-| A font might not be found for many reasons.
-| Check the spelling, where the font is installed etc. etc.
-| 
-| When in doubt, ask someone for help!
-|...............................................
-
+\g_fontspec_family_FangSong_GB2312_int=\count183
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font [SIMFANG.TTF]/I (it probably doesn't exist).
+. Could not resolve font FangSong_GB2312/I (it probably doesn't exist).
 .................................................
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font [SIMFANG.TTF]/I (it probably doesn't exist).
+. Could not resolve font FangSong_GB2312/I (it probably doesn't exist).
 .................................................
 .................................................
 . fontspec info: "defining-font"
 . 
-. Font family '[SIMFANG.TTF](0)' created for font '[SIMFANG.TTF]' with options
-. [Ligatures=TeX,Script={CJK},AutoFakeBold={4}].
+. Font family 'FangSong_GB2312(0)' created for font 'FangSong_GB2312' with
+. options [Ligatures=TeX,Script={CJK},AutoFakeBold={4}].
 . 
 . This font family consists of the following shapes:
 . 
 . * 'normal' with NFSS spec.:
-. <->"[SIMFANG.TTF]/ICU:mapping=tex-text;"
+. <->"FangSong_GB2312/ICU:script=hani;language=DFLT;mapping=tex-text;"
 . 
 . * 'bold' with NFSS spec.:
-. <->"[SIMFANG.TTF]/ICU:mapping=tex-text;embolden=4;"
+. 
+. <->"FangSong_GB2312/ICU:script=hani;language=DFLT;mapping=tex-text;embolden=4
+;"
 .................................................
 LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 84.
 
@@ -4898,12 +4832,24 @@ File: ./Sakurai/Fig_1.7.png Graphic file (type QTm)
 * \addfontfeature(s) ignored; it cannot be used with a font that wasn't
 * selected by fontspec.
 *************************************************
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 893.
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+*************************************************
+* fontspec warning: "addfontfeatures-ignored"
+* 
+* \addfontfeature(s) ignored; it cannot be used with a font that wasn't
+* selected by fontspec.
+*************************************************
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 898.
 [26]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 893.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 898.
  (./Chap 1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 893.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 893.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 898.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 898.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -4914,11 +4860,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 34159 strings out of 493918
- 656686 string characters out of 6150563
- 703193 words of memory out of 5000000
+ 34160 strings out of 493918
+ 656807 string characters out of 6150563
+ 703198 words of memory out of 5000000
  36895 multiletter control sequences out of 15000+600000
- 20776 words of font info for 116 fonts, out of 8000000 for 9000
+ 20784 words of font info for 117 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  63i,27n,57p,10374b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 
