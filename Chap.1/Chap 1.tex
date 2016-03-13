@@ -888,14 +888,21 @@ S_z\overset{\cdot}{=}\frac{\hbar}{2}\left(\begin{matrix}1&0\\0&-1\end{matrix}\ri
 \Lambda_{a'}|\alpha\rangle = |a'\rangle\langle|\alpha\rangle
 \ee
 
-J. Schwinger发展了一套基于选择性测量的量子力学形式。他引入测量算符$M(a')$作为一个记号，也就是$\Lambda_{a'}$或者说$|a'\rangle\langle a'|$，并通过研究不同的SG型实验得到了一系列关于$M(a')$（或者更一般的$M(b',a')$表示$|b'\rangle\langle a'|$）的性质。他以此为源建立了关于右矢，左矢的一系列数学。本书不会遵循Schwinger的做法，感兴趣的读者可以参考Gottfried(1966)\footnote{...}。%left unfinished
+J. Schwinger发展了一套基于选择性测量的量子力学形式。他引入测量算符$M(a')$作为一个记号，也就是$\Lambda_{a'}$或者说$|a'\rangle\langle a'|$，并通过研究不同的SG型实验得到了一系列关于$M(a')$（或者更一般的$M(b',a')$表示$|b'\rangle\langle a'|$）的性质。他以此为源建立了关于右矢，左矢的一系列数学。本书不会遵循Schwinger的做法，感兴趣的读者可以参考Gottfried(1966)\footnote{Gottfried, Kurt. "Quantum mechanics-Vol. 1: Fundamentals." {\it New York: Benjamin}, 1966 1 (1966).}。%left unfinished
 
 \noindent {\bf 再看自旋$\frac{1}{2}$系统}
 
 在我们进行对可观测量的一般讨论之前，我们再一次的考虑自旋$\frac{1}{2}$系统。这一次我们看看连续的SG实验在考虑我们之前对量子力学的假设的基础下的结果，并且得到$S_{x,y}$的本征态$|S_x;\pm\rangle$和$|S_y;\pm\rangle$，以及算符$S_x,S_y$本身。
 
-首先，我们知道
-
+首先，我们知道当一束$S_x+$的粒子通过SG$\hat{\bf z}$装置的时候，粒子会分裂出同等强度的两种成分。这就是指$S_x+$态变成$|S_z;\pm\rangle$的概率，或者简单记为$|\pm\rangle$，是一样的，为$\frac{1}{2}$；因此，
+\be
+|\langle+|S_x;\pm\rangle|=|\langle-|S_x;+\rangle|=\frac{1}{\sqrt{2}}
+\ee
+我们可以由此构建$S_x+$的右矢：
+\be\label{1.4.9}
+|S_x;+\rangle = \frac{1}{\sqrt{2}}|+\rangle + \frac{1}{\sqrt{2}}e^{i\delta_1}|-\rangle
+\ee
+其中，$\delta_1$是实数。在写\eqref{1.4.9}的时候，我们用了对于一个态矢来说，整体相位（就是对于$|+\rangle$和$|-\rangle$相同的部分）是没有意义的。我们可以约定把$|+\rangle$的系数取为实数，进而为正数。
 
 
 
