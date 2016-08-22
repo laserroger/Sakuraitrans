@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {5}近似方法}{2}{section.5}
+\contentsline {subsection}{\numberline {5.1}不含时微扰理论：非简并情况}{2}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}不含时微扰理论：简并情况}{15}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}类氢原子：精细结构与塞曼效应}{22}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}变分法}{34}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}含时势：相互作用绘景}{38}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}极端条件的含时哈密顿量}{47}{subsection.5.6}
