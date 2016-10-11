@@ -2,6 +2,8 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+%use a excellent package `physics' to make Dirac brakets etc.
+\usepackage{physics}
 \usepackage{fancybox}
 \usepackage{fancyhdr}
 \usepackage{color}
@@ -11,6 +13,9 @@
 \usepackage{tikz}
 \usepackage{mathrsfs}
 \usepackage{bm}
+
+\newcommand{\cu}{\mathcal{U}}
+\newcommand{\ud}{\mathrm{d}}
 
 \makeatletter % `@' now normal 'letter'
 \@addtoreset{equation}{subsection}
@@ -37,83 +42,152 @@
 \pdfbookmark[1]{目录}{anchor}
 \tableofcontents
 \clearpage
+%原来的翻译太TMD糟糕了。
 \section{量子动力学}
-\noindent 到目前为止我们还没有讨论物理体系如何随着时间变化。本章将详尽的讲解的动力学演化,换句话说，我们将将量子力学像牛顿（哈密顿或拉格朗日）动力学方程一般进行讨论。
+\noindent 到目前为止我们还没有讨论物理体系如何随着时间变化。本章将详尽的讲解态矢和/或观测量的动力学演化,换句话说，在这里我们关心牛顿（或哈密顿或拉格朗日）动力学方程的量子力学类比。
 
 \subsection{时间演化与薛定谔方程}
 
-\noindent \\
-
-\noindent \fbox{%
-  \parbox{\textwidth}{%
-    \begin{centering}
-      {\textbf{本节框架}}\\
-      啦啦啦啦啦啦啦啦啦啦啦
-       \end{centering}
-  }%
-}  \\
-
-\
 
 
-\noindent 首先我们需要知道，时间是量子力学里的一个参数，而不是一个算符。特别的，时间不是先前的章节里讨论的那种可观测量。如果像我们之前讨论坐标算符一样去讨论一个“时间算符”，这是没有意义的。然而具有讽刺意味的是，在波动力学的发展过程中，德布罗意和薛定谔都被引导着考虑把时间和能量的关系与坐标和动量的关系进行类比。但是当我们看量子力学现在的形式，已经没有对时间和空间的对等处理的痕迹了。有关场的相对论性的量子力学的确把坐标和时间同等的处理，但这样做的代价是把坐标从一个客观测量量的地位降到了仅仅是参数的地位。
+\noindent 首先我们需要知道，时间是量子力学里的一个参数，而{\it 不是}一个算符。特别的，时间不是先前的章节里讨论的那种可观测量。如果像我们之前讨论坐标算符一样去讨论一个“时间算符”是没有意义的。讽刺的是，在波动力学的发展过程中，德布罗意和薛定谔都受了一种一方面关于能量与时间，另一方面关于动量和位置（空间坐标）的协变的类比的引导。然而我们看看量子力学现在的形式，已经没有对时间和空间对等处理的痕迹了。有关相对论性量子场论的确把坐标和时间用同一套角标处理，但这样做的代价是把空间位置从一个可观测量降成了仅仅是一个参数。
 
 \ 
 
+\subsubsection{时间演化算符}
 
-\noindent {\textbf{时间演化算符}}
 
-
-\noindent 在这一节我们最关心的是，一个体系的态矢量是如何随着时间变化的？假设我们有一个物理体系在$t_0$的时候，态矢量表示为$|a\rangle$。在以后的时间里，我们期望这个体系仍然保持在相同的态$\left|\alpha \right\rangle$。我们用如下表述在接下来的时间里体系右矢一致的情形。
+\noindent 在这一节我们最关心的是，一个体系的态矢量是如何随着时间变化的？假设我们有一个物理体系在$t_0$的时候，态矢量表示为$\ket{\alpha}$。在以后的时间里，我们期望这个体系仍然保持在相同的态$\ket{\alpha}$。我们这样表述之后一段时间中的态矢。
 
 \begin{equation}
 \left|\alpha, t_0; t\right\rangle\quad(t>t_0)
 \end{equation}
 
-\noindent 我们已经写了的$\alpha$,$t_0$提醒我们去注意这个体系$|\alpha\rangle$ 过去曾经是一个。因为时间是一个被假定的连续参数，我们预期
+\noindent 我们用$\alpha$,$t_0$提醒我们去注意这个体系在之前的某个参考时间$t_0${\it 曾经}处在态$\ket{\alpha}$ 。因为我们假定时间是一个连续的参量，我们预期
 
 \begin{equation}
 \lim_{t\rightarrow t_0}\left|\alpha, t_0; t\right\rangle=\left|\alpha\right\rangle
 \end{equation}
 
-\noindent 同样我们可以简写为
+\noindent 同样我们可以把它简写为
 
 \begin{equation}
 \left|\alpha, t_0; t_0\right\rangle = \left|\alpha, t_0; t\right\rangle
 \end{equation}
-\noindent 对于这个，我们基本的任务是去研究体系右矢的时间演化：
+\noindent 我们基本的任务是去研究体系右矢的时间演化：
 \begin{equation}
 \left|\alpha, t_0 \right\rangle =\left| \alpha\right\rangle\xrightarrow{\text{时间演化}}\left|\alpha, t_0; t\right\rangle
 \end{equation}
-\noindent 换句话说，我们感兴趣的是一个体系右矢如何在时间置换下变换$t_0\rightarrow t $。
-\noindent 在这种转换的情况下，两个右矢与一个我们叫做{\textbf{时间演化算符}}$\mathcal{U} (t,t_0)$相关：
-\begin{equation}
-\left|\alpha, t_0; t\right\rangle=\mathcal{U}(t,t_0)\left|\alpha, t_0\right\rangle
+\noindent 换句话说，我们感兴趣的是一个体系右矢在时间平移$t_0\rightarrow t $下怎么改变。
+\noindent 在这种转换下，两个右矢与一个我们叫做{\textbf{时间演化算符（time-evolution operator）}}$\mathcal{U} (t,t_0)$的东西相关：
+\begin{equation}\label{2.1.5}
+\ket{\alpha, t_0; t}=\mathcal{U}(t,t_0)\ket{\alpha,t_0}
 \end{equation}
-\noindent 究竟是有着什么出众的性能我们这么喜欢用时间演化算符呢？首要的性能就是它对于$\mathcal{U}(t,t_0)$遵循同样概率的情形有着统一的要求。假定在$t_0$ 的体系右矢依据某些显著的本征矢$A$拓展：
+\noindent 我们需要要求时间演化算符有些什么样的性质？最重要的就是要求$\mathcal{U}(t,t_0)$是幺正的，从中可以得出概率守恒。假定在$t_0$ 的体系右矢依据某些显著的本征矢$A$拓展：
 \begin{equation}\label{2.1.6}
 \left|\alpha, t_0\right\rangle=\sum_{a'} C_{a'}(t_0)\left|a'\right\rangle
 \end{equation}
-\noindent 同样的，在稍晚的时间，我们有
+\noindent 同样的，一段时间之后，我们有
 \begin{equation}\label{2.1.7}
 \left|\alpha, t_0; t\right\rangle=\sum_{a'} C_{a'}(t)\left|a'\right\rangle
 \end{equation}
-\noindent 一般而言，我们不希望个别的扩张系数保持一致：\footnote{我们在接下来将要阐述，如果$A$与哈密顿函数交换，则balabala与balabala是完全等价的。绝对值不会打。}
+\noindent 一般而言，我们不希望个别的展开系数的模为常数：\footnote{我们在接下来将要阐述，如果$A$与哈密顿函数互易，则$\abs{c_{a'}(t)}$事实上是等于$\abs{c_{a'}(t_0)}$的。}
 \begin{equation} \label{2.1.8}
 \left|c_{a'}(t)\right| \neq \left|c_{a'}(t_0)\right|
 \end{equation}
-\noindent 例如，考虑一个自旋为$\frac{1}{2}$的体系伴随着它的一个自旋磁矩在一个$z$ 方向的统一磁场中，具体地说，假定在$t_0$时自旋在$x$方向：那就是说，这个体系由本征态$S_x$与本征值$\hbar/2 $所确定。随着时间的推移,自旋转移到$xy$ 平面，balabala。这意味着对于观测$S_x +$ 的可能性不再在$t>t_0$统一了。（这一段完全不会翻译。。求laser 调教。。）这对于观测$S_x +$也是同样有着有限的可能性。然而$S_x +$与$S_x -$的总和的可能性依然在任何时候都是统一的。总而言之，在(\ref{2.1.6})与(\ref{2.1.7})，我们有
+\noindent 例如，考虑一个自旋为$\frac{1}{2}$的体系伴随着它的一个自旋磁矩受一个$z$ 方向的均匀磁场作用，具体地说，假定在$t_0$时自旋在正$x$方向；那就是说，这个体系处在$S_x$的本征值为$\hbar/2 $的本征态。随着时间的推移,自旋在$xy$ 平面进动，在后面的章节我们会定量的讨论这一点。这意味着观测到$S_x +$ 的概率在$t>t_0$时不是一了。这时也有可能观测到$S_x -$。然而$S_x +$与$S_x -$的概率的和在任何时候都是一。总而言之，用(\ref{2.1.6})与(\ref{2.1.7})的记号，我们必须有：
 \begin{equation}
 \sum_{a'}|c_{a'}(t_0)|^2 = \sum_{a'}|c_{a'}(t)|^2
 \end{equation}
-\noindent 尽管(\ref{2.1.8})适用于个别的扩大系数（感觉此处的翻译好蠢，求教导）规定的另一种方式，如果体系右矢最初被归一化统一，它必须保持在任何时候都是归一化统一的：
+\noindent 与关于每个展开系数的(\ref{2.1.8})不同。换句话说，如果态矢最初归一的，它在之后的任一时刻必须仍然是归一的。
 \begin{equation}
 \langle \alpha, t_0|\alpha, t_0\rangle = 1 \Rightarrow \langle\alpha, t_0;t|\alpha, t_0;t\rangle = 1
 \end{equation}
+%不太确定这里`translation'怎么翻
+在这个例子里，如果时间演化算符是幺正的，就能自然的获得这个性质。所以我们把幺正性
+\begin{equation}\label{2.1.11}
+\mathcal{U}^\dagger(t,t_0) \mathcal{U}(t,t_0)=1,
+\end{equation}
+作为算符$\mathcal{U}$的一项基本性质。很多作者把幺正作为概率守恒的同义词可是有原因的。
 
+我们要求$\mathcal{U}$具有的另外一个特性是他的结合性:
+\begin{equation}\label{2.1.12}
+\cu (t_2,t_0)=\cu (t_2,t_1)\cu (t_1,t_0), \quad (t_2>t_1>t_0)
+\end{equation}
+这个方程表示如果我们想知道$t_0$到$t_2$的演化情况，我们可以先考虑从$t_0$演化到$t_1$，再从$t_1$演化到$t_2$而得到正确的结果---这是一项合理的要求。注意我们这里要从(\ref{2.1.12})的右边看到左边！
 
+考虑无穷小时间演化算符$\cu(t_0+dt,t_0)$也是很有用的：
+\begin{equation}\label{2.1.13}
+\ket{\alpha,t_0;t0+dt}=\cu (t_0+dt,t_0)\ket{\alpha,t_0}
+\end{equation}
+因为时间演化算符的连续性[见式(\ref(2.1.2))]，当$dt$趋近于零的时候必须退化成恒等算符。
+\begin{equation}\label{2.1.14}
+\lim_{dt \rightarrow 0} \cu (t_0+dt,t_0) =1,
+\end{equation}
+而且在这个例子里，我们希望$\cu(t_0+dt,t_0)$与$1$的差别是$dt$的一阶小量。
 
+我们注意到
+\begin{equation}\label{2.1.15}
+\cu(t_0+dt,t_0)=1-i\Omega dt,
+\end{equation}
+能满足上述一切要求。在这里要求$\Omega$是一个厄密(Hermitian)算符\footnote{如果这个$\Omega$算符显含时间，那么要取它在$t_0$的值。}，即要求
+\begin{equation}\label{2.1.16}
+\Omega^\dagger=\Omega
+\end{equation}
+满足(\ref{2.1.15})的无穷小时移算符满足如下结合律：
+\begin{equation}\label{2.1.17}
+\cu (t_0+dt_1+dt_2,t_0)=\cu (t0+dt_1+dt+2,t_0+dt_1)\cu (t_0+dt_1,t_0)
+\end{equation}
+这与恒等算符差了$dt$量级。这个算符的幺正性也可以这样验证：
+\begin{equation}\label{2.1.18}
+\cu^\dagger(t_0+dt,t_0) \cu(t_0+dt,t_0)=(1+i\Omega^\dagger dt)(1-i\Omega dt)\simeq1,
+\end{equation}
+%`to the extent'未翻译
+这里的$(dt)^2$和更高阶的项已略去。
 
+算符$\cu$有频率或者说时间倒数的量纲。那有没有其他熟悉的有频率量纲的可观测量？我们回想到旧量子论里面，角频率$\omega$被假设为遵守Planck-Einstein关系
+\begin{equation}\label{2.1.19}
+E=\hbar\omega
+\end{equation}
+我们现在从经典力学里偷来哈密顿量是时间演化（算符）的生成元这个观念（Goldstein 2002,%望有人补充更完整引用信息
+pp. 401-2）。现在把$\Omega$和哈密顿量算符$H$联系起来就很自然了：
+\begin{equation}\label{2.1.20}
+\Omega=\frac{H}{\hbar}。
+\end{equation}
 
+总而言之，无穷小时间演化算符现在可以写成
+\begin{equation}\label{2.1.21}
+\cu(t_0+dt,t_0)=1-\frac{iHdt}{\hbar}
+\end{equation}
+在这里假定哈密顿量算符$H$是厄密的。读者可能会问这里引入的$\hbar$和前面讨论空间平移算符的式子(\ref{1.6.32})里的$\hbar$是不是同一个东西。我们可以用比较后面我们推出来的经典运动方程的方式来回答这个问题。那时我们会发现除非两个$\hbar$被取成同一个东西，我们没法得到像
+\begin{equation}\label{2.1.22}
+\frac{\ud {\mathbf x}}{\ud t}=\frac{\mathbf p}{m}
+\end{equation}
+一样的关系式作为相应的量子力学规律的经典极限。
+%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Schr\"{o}dinger 方程}
+我们现在来导出时间演化算符$\cu(t,t_0)$的基本微分方程了。我们利用时间演化算符的结合律,在(\ref{2.1.12})里面让$t_1\rightarrow t,t_2 \rightarrow t+dt$，有：
+\begin{equation}\label{2.1.23}
+\cu(t+dt,t_0)=\cu(t+dt,t)\cu(t,t_0)=(1-\frac{iHdt}{\hbar}\cu(t,t_0),
+\end{equation}
+在这里时间差$t-t_0$不一定要是无穷小。我们有
+\begin{equation}\label{2.1.24}
+\cu(t+dt,t_0)-\cu(t,t_0)=-i\left(\frac{H}{\hbar}\right)dt\cu(t,t_0),
+\end{equation}
+又可以写成微分方程的形式：
+\begin{equation}\label{2.1.25}
+i\hbar \frac{\partial}{\partial t}\cu(t,t_0)=H\cu(t,t_0)。
+\end{equation}
+这就是时间演化算符的Schr\"{o}dinger 方程。一切与时间进程有关的东西都遵守这个基本方程。
+
+可以从方程(\ref{2.1.25})里看出态矢所满足的Schr\"{o}dinger 方程。给(\ref{2.1.25})式两边乘上$\ket{\alpha,t_0}$，我们有
+\begin{equation}\label{2.1.26}
+i\hbar \frac{\partial}{\partial t}\cu(t,t_0)\ket{\alpha,t_0}=H\cu(t,t_0)\ket{\alpha,t_0}.
+\end{equation}
+但是$\ket{\alpha,t_0}$不依赖于时间，所以又可以写成
+\begin{equation}\label{2.1.27}
+i\hbar \frac{\partial}{\partial t}\ket{\alpha,t}=H\ket{\alpha,t_0;t}
+\end{equation}
+这步用了式(\ref{2.1.5})。
 
 \end{document}
